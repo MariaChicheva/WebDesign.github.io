@@ -6143,13 +6143,10 @@ input[type=search].has-clear-button::-webkit-search-cancel-button{
     position:relative;
     overflow-x:hidden
 }
-.fb-ads-block{
-    height:310px
-}
+
 @media (max-width:991px){
     .fb-ads-block{
         height:unset;
-        min-height:280px
     }
 }
 .fb-ads-block.ads-in-text{
