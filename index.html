@@ -8,6 +8,10 @@
     <meta name="description" content="">
     
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/modal.css">
+    <link rel="stylesheet" href="assets/dropdown.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    
 
     
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -28,10 +32,10 @@
             <script src="https://yandex.ru/ads/system/context.js" async></script>
             <script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
             <script src="https://content.adriver.ru/AdRiverFPS.js"></script>
-            </head>
+</head>
 
 <body>
-
+    
 <div class="container">
     <div class="col-lg-16 main-container">
         <div class="book-container">
@@ -44,8 +48,8 @@
             <div class="header-t">
 
                 <nav class="add-nav pull-left hidden-xs top-nav">
-                    <a href="/faq">FAQ</a>
-                    <a href="/rules">Правила</a>
+                    <a href="/faq" class="faq">FAQ</a>
+                    <a href="/rules" class="faq">Правила</a>
                     <span class="dark-theme-switcher js-dark-theme-switcher">
                         <svg width="14px" height="14px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" id="toggle">
                             <g id="Lager_94" data-name="Lager 94" transform="translate(0)">
@@ -67,10 +71,10 @@
                 </strong>
                 
                 <div>
-                    <a href="index.html"><img src="assets/logo/logo2m.png" style="margin-bottom: 20px;"></a>
+                    <a href="index.html"><img src="assets/logo/logo2m.png" class="logohide" style="margin-bottom: 20px;"></a>
                 </div>
                 <div class="add-nav pull-left hidden-xs top-nav">
-                    <a href="#signup" data-toggle="modal" data-target=".log-sign">Авторизация</a>
+                    <a href="#signin" data-toggle="modal" data-target=".log-sign">Авторизация</a>
                     <a href="#signup" data-toggle="modal" data-target=".log-sign">Регистрация</a>
                 </div>
                 <div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -79,8 +83,8 @@
                           
                           <div class="bs-example bs-example-tabs">
                               <ul id="myTab" class="nav nav-tabs">
-                                <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Log In</a></li>
-                                <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Sign Up</a></li>
+                                <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Авторизация</a></li>
+                                <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Регистрация</a></li>
                                 
                               </ul>
                           </div>
@@ -95,18 +99,18 @@
                                 
                                  <div class="group">
                   <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-                      <label class="label" for="date">Email address</label></div>
+                      <label class="label" for="date">Email</label></div>
                                 
                                 
                               <!-- Password input-->
                               <div class="group">
                   <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
-                      <label class="label" for="date">Password</label>
+                      <label class="label" for="date">Пароль</label>
                       </div>
                   <em>minimum 6 characters</em>
                   
                              <div class="forgot-link">
-                              <a href="#forgot" data-toggle="modal" data-target="#forgot-password"> I forgot my password</a>
+                              <a href="#forgot" data-toggle="modal" data-target="#forgot-password"> Я забыл пароль</a>
                               </div>
                               
                   
@@ -114,7 +118,7 @@
                               <div class="control-group">
                                 <label class="control-label" for="signin"></label>
                                 <div class="controls">
-                                  <button id="signin" name="signin" class="btn btn-primary btn-block">Log In</button>
+                                  <button id="signin" name="signin" class="btn btn-primary btn-block">Войти</button>
                                 </div>
                               </div>
                               </fieldset>
@@ -129,12 +133,12 @@
                               <!-- Text input-->
                               <div class="group">
                   <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-                      <label class="label" for="date">First Name</label></div>
+                      <label class="label" for="date">Имя</label></div>
                               
                               <!-- Text input-->
                               <div class="group">
                   <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-                      <label class="label" for="date">Last Name</label></div>
+                      <label class="label" for="date">Фамилия</label></div>
                               
                               <!-- Password input-->
                               <div class="group">
@@ -144,12 +148,9 @@
                               <!-- Text input-->
                               <div class="group">
                   <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
-                      <label class="label" for="date">Password</label></div>
-                                <em>1-8 Characters</em>
+                      <label class="label" for="date">Пароль</label></div>
+                                <em>4-8 Символов</em>
                               
-                                <div class="group2">
-                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-                      <label class="label" for="date">Country</label></div>
                               
                               
                               
@@ -157,7 +158,7 @@
                               <div class="control-group">
                                 <label class="control-label" for="confirmsignup"></label>
                                 <div class="controls">
-                                  <button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Sign Up</button>
+                                  <button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Зарегестрироваться</button>
                                 </div>
                               </div>
                               </fieldset>
@@ -242,7 +243,7 @@
                             <a href="index.html">Домой</span></a>
                         </li>
                         <li >
-                            <a href="/fanfiction">Фанфики</a>
+                            <a href="fanfiction.html">Фанфики</a>
                         </li>
                         <li >
                             <a href="/authors">Авторы</a></li>
@@ -255,36 +256,1777 @@
 
                     <ul class="nav navbar-nav">
                         <li >
-                            <a href="/home/addfic" rel="nofollow"><svg class="ic_plus-circle "><use href="/assets/icons/icons-sprite24.svg#ic_plus-circle"></use></svg> Добавить фанфик</a>
+                            <a href="/home/addfic" rel="nofollow"><svg class="ic_plus-circle "><use href="/assets/icon/icons-sprite24.svg#ic_plus-circle"></use></svg> Добавить фанфик</a>
                         </li>
                         <li >
-                            <a href="/find-fanfics-846555" rel="nofollow"><svg class="ic_search "><use href="/assets/icons/icons-sprite24.svg#ic_search"></use></svg> Поиск фанфиков</a>
+                            <a href="/find-fanfics-846555" rel="nofollow"><svg class="ic_search "><use href="/assets/icon/icons-sprite24.svg#ic_search"></use></svg> Поиск фанфиков</a>
                         </li>
-                        <li><a href="/randomfic" rel="nofollow"><svg class="ic_dice "><use href="/assets/icons/icons-sprite24.svg#ic_dice"></use></svg> Случайная работа</a></li>
+                        <li><a href="/randomfic" rel="nofollow"><svg class="ic_dice "><use href="/assets/icon/icons-sprite24.svg#ic_dice"></use></svg> Случайная работа</a></li>
                         <li>
-                            <ul class="social-top list-inline">
-                                <li><a href="http://vk.com/ficbooknet" target="_blank" rel="nofollow"> <svg class="ic_vk "><use href="/assets/icons/icons-sprite24.svg#ic_vk"></use></svg> </a>
-                                </li>
-                                <li>
-                                    <a href="http://twitter.com/ficbooknet" target="_blank" rel="nofollow"> <svg class="ic_x "><use href="/assets/icons/icons-sprite24.svg#ic_x"></use></svg> </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/channel/UCbtVE1EkJhiaeO1jD2P7lQg" target="_blank" rel="nofollow"> <svg class="ic_youtube "><use href="/assets/icons/icons-sprite24.svg#ic_youtube"></use></svg> </a>
-                                </li>
-                                <li>
-                                    <a href="https://t.me/ficbook_official" target="_blank" rel="nofollow"> <svg class="ic_telegram "><use href="/assets/icons/icons-sprite24.svg#ic_telegram"></use></svg> </a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </div>
             </nav>
 
+             <main id="main" class="clearfix">
+                    
+                        <section class="home-block">
+        <div class="text-center">
+            <h1 class="mb-10">Blu Buk</h1>
+            <h2 class="h5">Место, где хранятся все истории</h2>
+        </div>
+
+        <div style="height: 38px">
+            <div id="app">
+                <div class="v-select vs--single vs--searchable dropdown jsVueComponent jsVueComponent">
+                  <div :id="'vs__combobox'" class="vs__dropdown-toggle" role="combobox" aria-label="Search for option">
+                    <div class="vs__selected-options">
+                      <input class="vs__search" :placeholder="currentPlaceholder" aria-autocomplete="list" :aria-labelledby="'vs__combobox'" :aria-controls="'vs__listbox'" type="search" autocomplete="off">
+                    </div>
+                  </div>
+                  <ul :id="'vs__listbox'" role="listbox" class="" style="display: none; visibility: hidden;"></ul>
+                </div>
+              </div>
+        </div>
+        
+
+        <h3 class="mt-30">Популярные фанфики</h3>
+
+        <div class="fanfic-promo">
+    
+            
+
+<a
+    href="/readfic/6997659"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="6997659"
+    class="js-promo-fanfic item direction-het"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-het" title="Гет — романтические и/или сексуальные отношения между мужчиной и женщиной.">
+            <div class="badge-icon-container">
+                <svg class="ic_het "><use href="/assets/icon/icons-sprite24.svg#ic_het"></use></svg>
+            </div>
+            <span class="badge-text">Гет</span>
+        </div>
+    
+
+            <img class="fic-cover img-responsive" src="https://images.ficbook.net/fanfic-covers/d_kk40tqhDm9AbE0oRKS2XcmEtW4LNEgZW.png" alt="Сто тысяч миль">
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Сотня                                                </div>
+        <h4>Сто тысяч миль </h4>
+    </div>
+</a>
+
+            
+
+<a
+    href="/readfic/11641689"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="11641689"
+    class="js-promo-fanfic item direction-femslash"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-femslash" title="Фемслэш — романтические и/или сексуальные взаимоотношения между женщинами.">
+            <div class="badge-icon-container">
+                <svg class="ic_femslash "><use href="/assets/icon/icons-sprite24.svg#ic_femslash"></use></svg>
+            </div>
+            <span class="badge-text">Фемслэш</span>
+        </div>
+    
+
+            <img class="fic-cover img-responsive" src="https://images.ficbook.net/fanfic-covers/d_weowVzOwjwkvY4MnEAfR3K5gEVQj4DuX.png" alt="когда ты улыбаешься">
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Ориджиналы                                                </div>
+        <h4>когда ты улыбаешься </h4>
+    </div>
+</a>
+
+            
+
+<a
+    href="/readfic/12560961"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="12560961"
+    class="js-promo-fanfic item direction-het"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-het" title="Гет — романтические и/или сексуальные отношения между мужчиной и женщиной.">
+            <div class="badge-icon-container">
+                <svg class="ic_het "><use href="/assets/icon/icons-sprite24.svg#ic_het"></use></svg>
+            </div>
+            <span class="badge-text">Гет</span>
+        </div>
+    
+
+            <img class="fic-cover img-responsive" src="https://images.ficbook.net/fanfic-covers/d_rVQvoIMRAKbPRkCnf8SifPPaYHP8mAT4.png" alt="Бери пример со снитча, Грейнджер">
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Роулинг Джоан «Гарри Поттер»,                            Гарри Поттер                                    (кроссовер)
+                                                </div>
+        <h4>Бери пример со снитча, Грейнджер </h4>
+    </div>
+</a>
+
+            
+
+<a
+    href="/readfic/13435912"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="13435912"
+    class="js-promo-fanfic item direction-het"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-het" title="Гет — романтические и/или сексуальные отношения между мужчиной и женщиной.">
+            <div class="badge-icon-container">
+                <svg class="ic_het "><use href="/assets/icon/icons-sprite24.svg#ic_het"></use></svg>
+            </div>
+            <span class="badge-text">Гет</span>
+        </div>
+    
+
+            <img class="fic-cover img-responsive" src="https://images.ficbook.net/fanfic-covers/d_gmL5sWGlJtjiA5WprvCVAGoqZopV9MS9.jpg" alt="Хранитель | The Keeper">
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Роулинг Джоан «Гарри Поттер»,                            Hogwarts Legacy                                    (кроссовер)
+                                                </div>
+        <h4>Хранитель | The Keeper </h4>
+    </div>
+</a>
+
+            
+
+<a
+    href="/readfic/13720155"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="13720155"
+    class="js-promo-fanfic item direction-het"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-het" title="Гет — романтические и/или сексуальные отношения между мужчиной и женщиной.">
+            <div class="badge-icon-container">
+                <svg class="ic_het "><use href="/assets/icon/icons-sprite24.svg#ic_het"></use></svg>
+            </div>
+            <span class="badge-text">Гет</span>
+        </div>
+    
+
+            <img class="fic-cover img-responsive" src="https://images.ficbook.net/fanfic-covers/d_Z1FU51NFtbgOq1WH1K61FPZnKjrchTUd.png" alt="Неизвестная переменная">
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Чужой: Завет                                                </div>
+        <h4>Неизвестная переменная </h4>
+    </div>
+</a>
+
+            
+
+<a
+    href="/readfic/0189d3ee-2184-749c-8910-b8e7ebf4662c"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="13777727"
+    class="js-promo-fanfic item direction-femslash"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-femslash" title="Фемслэш — романтические и/или сексуальные взаимоотношения между женщинами.">
+            <div class="badge-icon-container">
+                <svg class="ic_femslash "><use href="/assets/icon/icons-sprite24.svg#ic_femslash"></use></svg>
+            </div>
+            <span class="badge-text">Фемслэш</span>
+        </div>
+    
+
+            <div class="fic-cover-placeholder"><svg class="logo_min fic-cover-logo"><use href="/assets/icon/icons-sprite24.svg#logo_min"></use></svg></div>
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Ориджиналы                                                </div>
+        <h4>Через половину мира </h4>
+    </div>
+</a>
+
+            
+
+<a
+    href="/readfic/018a3e99-8495-7ba1-b715-6ada4fc65960"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="13848279"
+    class="js-promo-fanfic item direction-slash"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-slash" title="Слэш — романтические и/или сексуальные взаимоотношения между мужчинами.">
+            <div class="badge-icon-container">
+                <svg class="ic_slash "><use href="/assets/icon/icons-sprite24.svg#ic_slash"></use></svg>
+            </div>
+            <span class="badge-text">Слэш</span>
+        </div>
+    
+
+            <img class="fic-cover img-responsive" src="https://images.ficbook.net/fanfic-covers/d_rahQBnhUVBEAgUNdY4nDSvG74UH3X1q6.png" alt="Милый Артей">
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Ориджиналы                                                </div>
+        <h4>Милый Артей </h4>
+    </div>
+</a>
+
+            
+
+<a
+    href="/readfic/018b90c8-3c9b-7e38-bf6a-7372bb0db8d3"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="14044166"
+    class="js-promo-fanfic item direction-slash"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-slash" title="Слэш — романтические и/или сексуальные взаимоотношения между мужчинами.">
+            <div class="badge-icon-container">
+                <svg class="ic_slash "><use href="/assets/icon/icons-sprite24.svg#ic_slash"></use></svg>
+            </div>
+            <span class="badge-text">Слэш</span>
+        </div>
+    
+
+            <img class="fic-cover img-responsive" src="https://images.ficbook.net/fanfic-covers/d_yrCZbg57gAgKaXtFCNHVbfud9lxd8dVw.jpg" alt="Мерзавец">
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Ориджиналы                                                </div>
+        <h4>Мерзавец </h4>
+    </div>
+</a>
+
+            
+
+<a
+    href="/readfic/018c90d0-2f93-74fe-95fe-8cd8e0b8c0a3"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="14211441"
+    class="js-promo-fanfic item direction-het"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-het" title="Гет — романтические и/или сексуальные отношения между мужчиной и женщиной.">
+            <div class="badge-icon-container">
+                <svg class="ic_het "><use href="/assets/icon/icons-sprite24.svg#ic_het"></use></svg>
+            </div>
+            <span class="badge-text">Гет</span>
+        </div>
+    
+
+            <img class="fic-cover img-responsive" src="https://images.ficbook.net/fanfic-covers/d_mbEQSs6aiVP3eUwWRfMkHgA6nDSpUVj7.png" alt="Тайный Санта">
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Роулинг Джоан «Гарри Поттер»,                            Гарри Поттер                                    (кроссовер)
+                                                </div>
+        <h4>Тайный Санта </h4>
+    </div>
+</a>
+
+            
+
+<a
+    href="/readfic/018d21e7-70f6-7a95-8e81-6f8bae479084"
+    onclick="fym('reachGoal', 'click-promo-widget'); return true;"
+    data-fanfic-id="14314449"
+    class="js-promo-fanfic item direction-slash"
+>
+        
+    
+            <div class="badge-with-icon direction small-direction-slash" title="Слэш — романтические и/или сексуальные взаимоотношения между мужчинами.">
+            <div class="badge-icon-container">
+                <svg class="ic_slash "><use href="/assets/icon/icons-sprite24.svg#ic_slash"></use></svg>
+            </div>
+            <span class="badge-text">Слэш</span>
+        </div>
+    
+
+            <div class="fic-cover-placeholder"><svg class="logo_min fic-cover-logo"><use href="/assets/icon/icons-sprite24.svg#logo_min"></use></svg></div>
+    
+    <div class="fic-data">
+        <div class="fic-fandom">
+            <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                            Tomorrow x Together (TXT)                                                </div>
+        <h4>I&#039;m not a monster, but I can be one. </h4>
+    </div>
+</a>
+
+    </div>
+
+        <p class="mb-0 mt-15">Фанфик — рассказ о героях известного фильма, книги, аниме, игры и т. д.</p>
+    </section>
+
+    <div class="categories-block">
+        <div class="categories-list categories-block-box">
+            <h3><span class="opener">Категории</span></h3>
+            <div class="slide">
+                <ul class="list-unstyled">
+                                            <li>
+                            <a href="/fanfiction/anime_and_manga">Аниме и манга</a>
+                        </li>
+                                            <li>
+                            <a href="/fanfiction/books">Книги</a>
+                        </li>
+                                            <li>
+                            <a href="/fanfiction/cartoons">Мультфильмы</a>
+                        </li>
+                                            <li>
+                            <a href="/fanfiction/games">Игры</a>
+                        </li>
+                                            <li>
+                            <a href="/fanfiction/movies_and_tv_series">Фильмы и сериалы</a>
+                        </li>
+                                            <li>
+                            <a href="/fanfiction/other">Другое</a>
+                        </li>
+                                            <li>
+                            <a href="/fanfiction/rpf">Известные люди (RPF)</a>
+                        </li>
+                                            <li>
+                            <a href="/fanfiction/no_fandom">Ориджиналы</a>
+                        </li>
+                                            <li>
+                            <a href="/fanfiction/comics">Комиксы</a>
+                        </li>
+                                            <li>
+                            <a href="/fanfiction/musicals">Мюзиклы</a>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="categories-list categories-block-box">
+            <h3><span class="opener">Направленности</span></h3>
+            <div class="slide">
+                <ul class="list-unstyled">
+                                                                <li>
+                            <a href="/popular-fanfics-376846/gen"
+                               class="direction-link">
+                                    
+    
+            <svg class="ic_gen "><use xlink:href="assets/icon/icons-sprite24.svg#ic_gen"></use></svg>
+    
+                                <span class="ml-10">Джен</span>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="/popular-fanfics-376846/het"
+                               class="direction-link">
+                                    
+    
+            <svg class="ic_het "><use href="assets/icon/icons-sprite24.svg#ic_het"></use></svg>
+    
+                                <span class="ml-10">Гет</span>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="/popular-fanfics-376846/slash-fics-783456238"
+                               class="direction-link">
+                                    
+    
+            <svg class="ic_slash "><use href="assets/icon/icons-sprite24.svg#ic_slash"></use></svg>
+    
+                                <span class="ml-10">Слэш</span>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="/popular-fanfics-376846/femslash-fanfics-54353433"
+                               class="direction-link">
+                                    
+    
+            <svg class="ic_femslash "><use href="assets/icon/icons-sprite24.svg#ic_femslash"></use></svg>
+    
+                                <span class="ml-10">Фемслэш</span>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="/popular-fanfics-376846/other"
+                               class="direction-link">
+                                    
+    
+            <svg class="ic_other "><use href="assets/icon/icons-sprite24.svg#ic_other"></use></svg>
+    
+                                <span class="ml-10">Другие виды отношений</span>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="/popular-fanfics-376846/mixed"
+                               class="direction-link">
+                                    
+    
+            <svg class="ic_mixed "><use href="assets/icon/icons-sprite24.svg#ic_mixed"></use></svg>
+    
+                                <span class="ml-10">Смешанная</span>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="/popular-fanfics-376846/article"
+                               class="direction-link">
+                                    
+    
+            <svg class="ic_article "><use href="assets/icon/icons-sprite24.svg#ic_article"></use></svg>
+    
+                                <span class="ml-10">Статья</span>
+                            </a>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="categories-list categories-block-box">
+            <h3><span class="opener">Популярные фэндомы</span></h3>
+            <div class="slide">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="/fanfiction/no_fandom/originals">
+                            <span>Ориджиналы</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fanfiction/games/vedmak">
+                            <span>Ведьмак</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fanfiction/movies_and_tv_series/ochenj_strannie_dela">
+                            <span>Очень странные дела</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fanfiction/books/rouling_dzhoan___garri_potter">
+                            <span>Гарри Поттер</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fanfiction/anime_and_manga/naruto">
+                            <span>Naruto</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fanfiction/anime_and_manga/fairy_tail">
+                            <span>Fairy Tail</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fanfiction/movies_and_tv_series/sverhjestestvennoe">
+                            <span>Сверхъестественное</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fanfiction/rpf/bangtan_boys__bts__1">
+                            <span>Bangtan Boys (BTS)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fanfiction/rpf/exo___k_m">
+                            <span>EXO - K/M</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/fanfiction"
+                           class="font-bold">Еще более 25,000 фэндомов</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="fb-ads fb-ads-block d-flex mx-15 mx-xs-5" data-place-id="main-page-middle"></div>
+    <div class="main-holder">
+                    <section class="mb-15">
+                <h2 class="section-title">Горячие работы</h2>
+                <div class="text-muted">5 случайных работ</div>
+                                                                <article class="
+    fanfic-inline
+     fanfic-inline-hot
+                        ">
+    <div class="js-toggle-description">
+        <h3 class="fanfic-inline-title">
+            <a class="visit-link"
+               href="/readfic/11017647?premiumVisit=1">Белые Лилии
+            </a>
+        </h3>
+        
+        <div class="fanfic-main-info">
+
+            
+                                        
+    
+            <div
+            class="badge-with-icon direction direction-before-het small-direction-het"
+            title="Гет — романтические и/или сексуальные отношения между мужчиной и женщиной.">
+            <div class="badge-icon-container">
+                <svg class="ic_het "><use href="assets/icon/icons-sprite24.svg#ic_het"></use></svg>
+            </div>
+            <span class="badge-text">Гет</span>
+        </div>
+    
+
+                        
+                        <div class="badge-with-icon badge-rating-NC-17"
+                    title="NC-17 — фанфики, в которых могут быть детально описаны эротические сцены, насилие либо какие-то другие тяжёлые моменты.">
+                <span class="badge-text">NC-17</span>
+            </div>
+
+                                        <div class="badge-with-icon badge-secondary badge-status-in-progress">
+                    <div class="badge-icon-container">
+                        <svg class="ic_clock "><use href="assets/icon/icons-sprite24.svg#ic_clock"></use></svg>
+                    </div>
+                    <span class="badge-text">В процессе</span>
+                </div>
+                                    
+                                        <div class="badge-with-icon badge-secondary badge-like">
+                    <div class="badge-icon-container">
+                        <svg class="ic_thumbs-up "><use href="assets/icon/icons-sprite24.svg#ic_thumbs-up"></use></svg>
+                    </div>
+                    <span class="badge-text">31</span>
+                </div>
+            
+                        
+
+                        <div class="side-section">
+
+                                    <fanfic-more-dropdown class="jsVueComponent" :fanfic-id="11017647"
+                                           ></fanfic-more-dropdown>
+                                                    <div class="hot-fanfic" title="Работа размещена в разделе в качестве платной услуги">
+                    <svg class="ic_bubble-dark "><use href="assets/icon/icons-sprite24.svg#ic_bubble-dark"></use></svg>
+                        <a href="/faq#about7">Горячая работа!</a>
+                    </div>
+                
+                            </div>
+
+            <dl class="fanfic-inline-info mt-5">
+                <dt>Автор:</dt>
+                <dd>
+                    <span class="author word-break">
+                        <a href="/authors/1863375">
+                            <svg class="ic_user "><use href="assets/icon/icons-sprite24.svg#ic_user"></use></svg>Pure bred</a>
+                    </span>
+
+                                    </dd>
+            </dl>
+
+            <dl class="fanfic-inline-info">
+                <dt>Фэндом:</dt>
+                <dd>
+                                            <a href="/fanfiction/anime_and_manga/tokyo_manji_revengers"
+                           >Tokyo Revengers</a>                                                                                        </dd>
+            </dl>
+
+                            <dl class="fanfic-inline-info">
+                    <dt>Пэйринг и персонажи:</dt>
+                    <dd>
+                                                                            <a href="/pairings/%D0%9A%D0%B5%D0%BD%20%D0%A0%D1%8E%D0%B3%D1%83%D0%B4%D0%B6%D0%B8---%D0%AD%D0%BC%D0%BC%D0%B0%20%D0%A1%D0%B0%D0%BD%D0%BE"
+                               class=" pairing-link pairing-highlight">Кен Рюгуджи/Эмма Сано</a>,                                                    <a href="/pairings/%D0%A2%D0%B0%D0%BA%D0%B5%D0%BC%D0%B8%D1%87%D0%B8%20%D0%A5%D0%B0%D0%BD%D0%B0%D0%B3%D0%B0%D0%BA%D0%B8---%D0%A5%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%20%D0%A2%D0%B0%D1%87%D0%B8%D0%B1%D0%B0%D0%BD%D0%B0"
+                               class=" pairing-link pairing-highlight">Такемичи Ханагаки/Хината Тачибана</a>,                                                    <a href="/pairings/%D0%9C%D0%B0%D0%BD%D0%B4%D0%B6%D0%B8%D1%80%D0%BE%20%D0%A1%D0%B0%D0%BD%D0%BE---%D0%9E%D0%96%D0%9F"
+                               class=" pairing-link pairing-highlight">Манджиро Сано/ОЖП</a>                                                                    </dd>
+                </dl>
+            
+            <dl class="fanfic-inline-info">
+                <dt>Размер:</dt>
+                <dd>
+                    планируется Макси, написано                    34 страницы,
+                    4 части</dd>
+            </dl>
+            <dl class="fanfic-inline-info">
+                <dt>
+                                            Дата обновления:
+                                    </dt>
+                <dd>
+                    22.01.2024
+                </dd>
+            </dl>
+                            <div class="tags">
+                    <span class="font-bold mr-5">Метки:</span>
+                    
+    
+    <a href="/tags/4"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Aged up</a>
+
+    
+    <a href="/tags/1687"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >ER</a>
+
+    
+    <a href="/tags/1682"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Hurt/Comfort</a>
+
+    
+    <a href="/tags/018c4a8e-0eea-7e23-b157-e3d26f48923b"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Underage</a>
+
+    
+    <a href="/tags/201"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Алкоголь</a>
+
+    
+    <a href="/tags/1665"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Ангст</a>
+
+    
+    <a href="/tags/439"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                 hidden         tag-spoiler        "
+        >Временная смерть персонажа</a>
+
+    
+    <a href="/tags/1536"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Второстепенные оригинальные персонажи</a>
+
+    
+    <a href="/tags/1367"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Драки</a>
+
+    
+    <a href="/tags/1668"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Драма</a>
+
+    
+    <a href="/tags/1701"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Дружба</a>
+
+    
+    <a href="/tags/1710"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Жестокость</a>
+
+    
+    <a href="/tags/564"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                 hidden         tag-spoiler        "
+        >Канонная смерть персонажа</a>
+
+    
+    <a href="/tags/202"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Курение</a>
+
+    
+    <a href="/tags/1703"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Любовь/Ненависть</a>
+
+    
+    <a href="/tags/1649"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Насилие</a>
+
+    
+    <a href="/tags/1653"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Нецензурная лексика</a>
+
+    
+    <a href="/tags/1657"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >ОЖП</a>
+
+    
+    <a href="/tags/1656"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >ОМП</a>
+
+    
+    <a href="/tags/1648"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >ООС</a>
+
+    
+    <a href="/tags/12"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Преступный мир</a>
+
+    
+    <a href="/tags/69"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Психические расстройства</a>
+
+    
+    <a href="/tags/40"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Психологические травмы</a>
+
+    
+    <a href="/tags/836"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Психологическое насилие</a>
+
+    
+    <a href="/tags/287"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                 hidden         tag-spoiler        "
+        >Раздвоение личности</a>
+
+    
+    <a href="/tags/1664"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Романтика</a>
+
+    
+    <a href="/tags/1713"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                 hidden         tag-spoiler        "
+        >Смерть второстепенных персонажей</a>
+
+    
+    <a href="/tags/1647"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                 hidden         tag-spoiler        "
+        >Смерть основных персонажей</a>
+
+    
+    <a href="/tags/1690"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Стёб</a>
+
+    
+    <a href="/tags/3"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                 hidden         tag-spoiler        "
+        >Счастливый финал</a>
+
+    
+    <a href="/tags/621"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Убийства</a>
+
+    
+    <a href="/tags/144"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Упоминания наркотиков</a>
+
+    
+    <a href="/tags/77"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                 hidden         tag-spoiler         tag-adult"
+        >Упоминания самоубийства</a>
+
+    
+    <a href="/tags/66"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Черный юмор</a>
+
+    
+    <a href="/tags/1673"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Экшн</a>
+
+    
+    <a href="/tags/1666"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Юмор</a>
+
+
+    <strong class="show-hidden-tags-btn js-show-hidden-tags tag">
+         Спойлеры        ...
+    </strong>
+                </div>
+            
+            <div class="fanfic-description">
+                <div class="wrap word-break urlize-links fanfic-description-text">
+                    Свое собственное &quot;Я&quot;, какое оно? Что оно твердит? Кричит ли оно о том, что нужно смывать кровь с рук и избавляться от тела? Или же вопит во всё горло, что лишь убийство способно изменить этот мир и перевернуть реальность? Кого слушать и где искать ответ? 
+— Раз нас двое, то и непосильная ноша должна разделиться надвое, — промолвила Госпожа, смотря на фотографию девушки Манджиро Сано. Поднося её к горящей свече с улыбкой, наслаждаясь тем, как она сгорала в её руках, — Разве нет, Саске Наран?
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hide-fanfic-block class="jsVueComponent"
+        :path-to-settings="&quot;\/home\/preferences\/hidefanfics#settingsContent&quot;"
+         :pairings="[{&quot;pairingValue&quot;:&quot;\u041a\u0435\u043d \u0420\u044e\u0433\u0443\u0434\u0436\u0438---\u042d\u043c\u043c\u0430 \u0421\u0430\u043d\u043e&quot;,&quot;readablePairing&quot;:&quot;\u041a\u0435\u043d \u0420\u044e\u0433\u0443\u0434\u0436\u0438\/\u042d\u043c\u043c\u0430 \u0421\u0430\u043d\u043e&quot;},{&quot;pairingValue&quot;:&quot;\u0422\u0430\u043a\u0435\u043c\u0438\u0447\u0438 \u0425\u0430\u043d\u0430\u0433\u0430\u043a\u0438---\u0425\u0438\u043d\u0430\u0442\u0430 \u0422\u0430\u0447\u0438\u0431\u0430\u043d\u0430&quot;,&quot;readablePairing&quot;:&quot;\u0422\u0430\u043a\u0435\u043c\u0438\u0447\u0438 \u0425\u0430\u043d\u0430\u0433\u0430\u043a\u0438\/\u0425\u0438\u043d\u0430\u0442\u0430 \u0422\u0430\u0447\u0438\u0431\u0430\u043d\u0430&quot;},{&quot;pairingValue&quot;:&quot;\u041c\u0430\u043d\u0434\u0436\u0438\u0440\u043e \u0421\u0430\u043d\u043e---\u041e\u0416\u041f&quot;,&quot;readablePairing&quot;:&quot;\u041c\u0430\u043d\u0434\u0436\u0438\u0440\u043e \u0421\u0430\u043d\u043e\/\u041e\u0416\u041f&quot;}]"         :fanfic="{&quot;id&quot;:11017647,&quot;author_id&quot;:1863375,&quot;author_username&quot;:&quot;Pure bred&quot;,&quot;title&quot;:&quot;\u0411\u0435\u043b\u044b\u0435 \u041b\u0438\u043b\u0438\u0438&quot;}"
+    ></hide-fanfic-block>
+</article>
+                                        <article class="
+    fanfic-inline
+     fanfic-inline-hot
+                        ">
+    <div class="js-toggle-description">
+        <h3 class="fanfic-inline-title">
+            <a class="visit-link"
+               href="/readfic/11424470?premiumVisit=1">Приятно познакомиться, я Малфой!
+            </a>
+        </h3>
+        
+        <div class="fanfic-main-info">
+
+            
+                                        
+    
+            <div
+            class="badge-with-icon direction direction-before-het small-direction-het"
+            title="Гет — романтические и/или сексуальные отношения между мужчиной и женщиной.">
+            <div class="badge-icon-container">
+                <svg class="ic_het "><use href="/assets/icon/icons-sprite24.svg#ic_het"></use></svg>
+            </div>
+            <span class="badge-text">Гет</span>
+        </div>
+    
+
+                        
+                        <div class="badge-with-icon badge-rating-NC-17"
+                    title="NC-17 — фанфики, в которых могут быть детально описаны эротические сцены, насилие либо какие-то другие тяжёлые моменты.">
+                <span class="badge-text">NC-17</span>
+            </div>
+
+                                        <div class="badge-with-icon badge-secondary badge-status-in-progress">
+                    <div class="badge-icon-container">
+                        <svg class="ic_clock "><use href="/assets/icon/icons-sprite24.svg#ic_clock"></use></svg>
+                    </div>
+                    <span class="badge-text">В процессе</span>
+                </div>
+                                    
+                                        <div class="badge-with-icon badge-secondary badge-like">
+                    <div class="badge-icon-container">
+                        <svg class="ic_thumbs-up "><use href="/assets/icon/icons-sprite24.svg#ic_thumbs-up"></use></svg>
+                    </div>
+                    <span class="badge-text">150</span>
+                </div>
+            
+                                        <div class="badge-with-icon badge-secondary badge-reward">
+                    <div class="badge-icon-container">
+                        <svg class="ic_trophy icon-gold-color"><use href="/assets/icon/icons-sprite24.svg#ic_trophy"></use></svg>
+                    </div>
+                    <span class="badge-text">1</span>
+                </div>
+            
+
+                        <div class="side-section">
+
+                                    <fanfic-more-dropdown class="jsVueComponent" :fanfic-id="11424470"
+                                           ></fanfic-more-dropdown>
+                                                    <div class="hot-fanfic" title="Работа размещена в разделе в качестве платной услуги">
+                    <svg class="ic_bubble-dark "><use href="/assets/icon/icons-sprite24.svg#ic_bubble-dark"></use></svg>
+                        <a href="/faq#about7">Горячая работа!</a>
+                    </div>
+                
+                            </div>
+
+            <dl class="fanfic-inline-info mt-5">
+                <dt>Автор:</dt>
+                <dd>
+                    <span class="author word-break">
+                        <a href="/authors/2494542">
+                            <svg class="ic_user "><use href="/assets/icon/icons-sprite24.svg#ic_user"></use></svg>Lady Book</a>
+                    </span>
+
+                                    </dd>
+            </dl>
+
+            <dl class="fanfic-inline-info">
+                <dt>Фэндом:</dt>
+                <dd>
+                                            <a href="/fanfiction/books/rouling_dzhoan___garri_potter"
+                           >Роулинг Джоан «Гарри Поттер»</a>,                                            <a href="/fanfiction/movies_and_tv_series/garri_potter"
+                           >Гарри Поттер</a>                                                            (кроссовер)
+                                                                                        </dd>
+            </dl>
+
+                            <dl class="fanfic-inline-info">
+                    <dt>Пэйринг и персонажи:</dt>
+                    <dd>
+                                                                            <a href="/pairings/%D0%9E%D0%96%D0%9F---%D0%94%D1%80%D0%B0%D0%BA%D0%BE%20%D0%9C%D0%B0%D0%BB%D1%84%D0%BE%D0%B9"
+                               class=" pairing-link pairing-highlight">ОЖП/Драко Малфой</a>,                                                                            <a href="/pairings/%D0%9E%D0%96%D0%9F"
+                               class=" pairing-link">ОЖП</a>,                                                    <a href="/pairings/%D0%94%D1%80%D0%B0%D0%BA%D0%BE%20%D0%9C%D0%B0%D0%BB%D1%84%D0%BE%D0%B9"
+                               class=" pairing-link">Драко Малфой</a>,                                                    <a href="/pairings/%D0%93%D0%B0%D1%80%D1%80%D0%B8%20%D0%9F%D0%BE%D1%82%D1%82%D0%B5%D1%80"
+                               class=" pairing-link">Гарри Поттер</a>,                                                    <a href="/pairings/%D0%93%D0%B5%D1%80%D0%BC%D0%B8%D0%BE%D0%BD%D0%B0%20%D0%93%D1%80%D0%B5%D0%B9%D0%BD%D0%B4%D0%B6%D0%B5%D1%80"
+                               class=" pairing-link">Гермиона Грейнджер</a>,                                                    <a href="/pairings/%D0%A0%D0%BE%D0%BD%20%D0%A3%D0%B8%D0%B7%D0%BB%D0%B8"
+                               class=" pairing-link">Рон Уизли</a>,                                                    <a href="/pairings/%D0%94%D0%B6%D0%BE%D1%80%D0%B4%D0%B6%20%D0%A3%D0%B8%D0%B7%D0%BB%D0%B8"
+                               class=" pairing-link">Джордж Уизли</a>,                                                    <a href="/pairings/%D0%A4%D1%80%D0%B5%D0%B4%20%D0%A3%D0%B8%D0%B7%D0%BB%D0%B8"
+                               class=" pairing-link">Фред Уизли</a>                                            </dd>
+                </dl>
+            
+            <dl class="fanfic-inline-info">
+                <dt>Размер:</dt>
+                <dd>
+                    планируется Макси, написано                    300 страниц,
+                    30 частей</dd>
+            </dl>
+            <dl class="fanfic-inline-info">
+                <dt>
+                                            Дата обновления:
+                                    </dt>
+                <dd>
+                    14.01.2024
+                </dd>
+            </dl>
+                            <div class="tags">
+                    <span class="font-bold mr-5">Метки:</span>
+                    
+    
+    <a href="/tags/1683"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >AU</a>
+
+    
+    <a href="/tags/1682"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Hurt/Comfort</a>
+
+    
+    <a href="/tags/1665"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Ангст</a>
+
+    
+    <a href="/tags/1668"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Драма</a>
+
+    
+    <a href="/tags/1701"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Дружба</a>
+
+    
+    <a href="/tags/1703"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Любовь/Ненависть</a>
+
+    
+    <a href="/tags/1653"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Нецензурная лексика</a>
+
+    
+    <a href="/tags/1657"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >ОЖП</a>
+
+    
+    <a href="/tags/1648"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >ООС</a>
+
+    
+    <a href="/tags/1681"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Повествование от первого лица</a>
+
+    
+    <a href="/tags/1677"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Повседневность</a>
+
+    
+    <a href="/tags/1674"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Психология</a>
+
+    
+    <a href="/tags/1664"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Романтика</a>
+
+    
+    <a href="/tags/1669"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Фэнтези</a>
+
+    
+    <a href="/tags/1666"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Юмор</a>
+
+
+                </div>
+            
+            <div class="fanfic-description">
+                <div class="wrap word-break urlize-links fanfic-description-text">
+                    Маленькая Агата попадает в приют просле смерти своих родителей. Уже не надеясь на то, что ее кто-нибудь удочерит, девочка отчаивается. Внезапно на пороге появляется таинственный мужчина с сыном. Кто они такие? Куда приведет Агату ее судьба? Что ждёт её в будущем и как будут развиваться её отношения с этим мальчиком?
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hide-fanfic-block class="jsVueComponent"
+        :path-to-settings="&quot;\/home\/preferences\/hidefanfics#settingsContent&quot;"
+         :pairings="[{&quot;pairingValue&quot;:&quot;\u041e\u0416\u041f---\u0414\u0440\u0430\u043a\u043e \u041c\u0430\u043b\u0444\u043e\u0439&quot;,&quot;readablePairing&quot;:&quot;\u041e\u0416\u041f\/\u0414\u0440\u0430\u043a\u043e \u041c\u0430\u043b\u0444\u043e\u0439&quot;}]"         :fanfic="{&quot;id&quot;:11424470,&quot;author_id&quot;:2494542,&quot;author_username&quot;:&quot;Lady Book&quot;,&quot;title&quot;:&quot;\u041f\u0440\u0438\u044f\u0442\u043d\u043e \u043f\u043e\u0437\u043d\u0430\u043a\u043e\u043c\u0438\u0442\u044c\u0441\u044f, \u044f \u041c\u0430\u043b\u0444\u043e\u0439!&quot;}"
+    ></hide-fanfic-block>
+</article>
+                                    <article class="
+    fanfic-inline
+     fanfic-inline-hot
+                        ">
+    <div class="js-toggle-description">
+        <h3 class="fanfic-inline-title">
+            <a class="visit-link"
+               href="/readfic/12850668?premiumVisit=1">Грань реальности
+            </a>
+        </h3>
+        
+        <div class="fanfic-main-info">
+
+            
+                                        
+    
+            <div
+            class="badge-with-icon direction direction-before-gen small-direction-gen"
+            title="Джен — не описываются и не упоминаются сексуальные взаимоотношения или они не играют решающей роли.">
+            <div class="badge-icon-container">
+                <svg class="ic_gen "><use href="/assets/icon/icons-sprite24.svg#ic_gen"></use></svg>
+            </div>
+            <span class="badge-text">Джен</span>
+        </div>
+    
+
+                        
+                        <div class="badge-with-icon badge-rating-R"
+                    title="R — фанфики, в которых присутствуют эротические сцены или насилие без детального графического описания.">
+                <span class="badge-text">R</span>
+            </div>
+
+                                        <div class="badge-with-icon badge-secondary badge-status-in-progress">
+                    <div class="badge-icon-container">
+                        <svg class="ic_clock "><use href="/assets/icon/icons-sprite24.svg#ic_clock"></use></svg>
+                    </div>
+                    <span class="badge-text">В процессе</span>
+                </div>
+                                    
+                                        <div class="badge-with-icon badge-secondary badge-like">
+                    <div class="badge-icon-container">
+                        <svg class="ic_thumbs-up "><use href="/assets/icon/icons-sprite24.svg#ic_thumbs-up"></use></svg>
+                    </div>
+                    <span class="badge-text">24</span>
+                </div>
+            
+                        
+
+                        <div class="side-section">
+
+                                    <fanfic-more-dropdown class="jsVueComponent" :fanfic-id="12850668"
+                                           ></fanfic-more-dropdown>
+                                                    <div class="hot-fanfic" title="Работа размещена в разделе в качестве платной услуги">
+                    <svg class="ic_bubble-dark "><use href="/assets/icon/icons-sprite24.svg#ic_bubble-dark"></use></svg>
+                        <a href="/faq#about7">Горячая работа!</a>
+                    </div>
+                
+                                    <a href="/readfic/12850668?premiumVisit=1">
+                        <picture class="fanfic-hat-cover-picture">
+                            <source media="(max-width: 480px)" srcset="https://images.ficbook.net/fanfic-covers/m_tWujgwmbWLmGNY7DnOoPfNFo40WB4u8s.png">
+                            <source media="(min-width: 481px)" srcset="https://images.ficbook.net/fanfic-covers/d_tWujgwmbWLmGNY7DnOoPfNFo40WB4u8s.png">
+                            <img src="https://images.ficbook.net/fanfic-covers/m_tWujgwmbWLmGNY7DnOoPfNFo40WB4u8s.png" alt="Грань реальности"
+                                 width="180px">
+                        </picture>
+                    </a>
+                            </div>
+
+            <dl class="fanfic-inline-info mt-5">
+                <dt>Автор:</dt>
+                <dd>
+                    <span class="author word-break">
+                        <a href="/authors/5527557">
+                            <svg class="ic_user "><use href="/assets/icon/icons-sprite24.svg#ic_user"></use></svg>Rosarika_</a>
+                    </span>
+
+                                    </dd>
+            </dl>
+
+            <dl class="fanfic-inline-info">
+                <dt>Фэндом:</dt>
+                <dd>
+                                            <a href="/fanfiction/no_fandom/originals"
+                           >Ориджиналы</a>                                                                                        </dd>
+            </dl>
+
+            
+            <dl class="fanfic-inline-info">
+                <dt>Размер:</dt>
+                <dd>
+                    планируется Макси, написано                    44 страницы,
+                    5 частей</dd>
+            </dl>
+            <dl class="fanfic-inline-info">
+                <dt>
+                                            Дата обновления:
+                                    </dt>
+                <dd>
+                    10.11.2023
+                </dd>
+            </dl>
+                            <div class="tags">
+                    <span class="font-bold mr-5">Метки:</span>
+                    
+    
+    <a href="/tags/442"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Альтернативная мировая история</a>
+
+    
+    <a href="/tags/2624"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Наука</a>
+
+    
+    <a href="/tags/1232"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Технологии</a>
+
+    
+    <a href="/tags/402"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Ученые</a>
+
+
+                </div>
+            
+            <div class="fanfic-description">
+                <div class="wrap word-break urlize-links fanfic-description-text">
+                    Каждый день такой же как и предыдущий: работа, работа и еще раз работа. Это является самой желанной жизнью для довольно закрытого человека, ведь работа интересная и совпадает с ее желаниями. Однако в какой-то момент мир начинает стремительно изменяться.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hide-fanfic-block class="jsVueComponent"
+        :path-to-settings="&quot;\/home\/preferences\/hidefanfics#settingsContent&quot;"
+                :fanfic="{&quot;id&quot;:12850668,&quot;author_id&quot;:5527557,&quot;author_username&quot;:&quot;Rosarika_&quot;,&quot;title&quot;:&quot;\u0413\u0440\u0430\u043d\u044c \u0440\u0435\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438&quot;}"
+    ></hide-fanfic-block>
+</article>
+                                        <article class="
+    fanfic-inline
+     fanfic-inline-hot
+                        ">
+    <div class="js-toggle-description">
+        <h3 class="fanfic-inline-title">
+            <a class="visit-link"
+               href="/readfic/13435456?premiumVisit=1">Мне больно...
+            </a>
+        </h3>
+        
+        <div class="fanfic-main-info">
+
+            
+                                        
+    
+            <div
+            class="badge-with-icon direction direction-before-slash small-direction-slash"
+            title="Слэш — романтические и/или сексуальные взаимоотношения между мужчинами.">
+            <div class="badge-icon-container">
+                <svg class="ic_slash "><use href="/assets/icon/icons-sprite24.svg#ic_slash"></use></svg>
+            </div>
+            <span class="badge-text">Слэш</span>
+        </div>
+    
+
+                        
+                        <div class="badge-with-icon badge-rating-PG-13"
+                    title="PG-13 — фанфики, в которых могут быть описаны романтические отношения на уровне поцелуев и/или могут присутствовать намёки на насилие и другие тяжёлые моменты.">
+                <span class="badge-text">PG-13</span>
+            </div>
+
+                                                    <div class="badge-with-icon badge-secondary badge-status-finished">
+                    <div class="badge-icon-container">
+                        <svg class="ic_done" viewBox="0 0 32 32">
+                            <path d="M16 .058C7.196.058.058 7.196.058 16S7.196 31.942 16 31.942 31.942 24.804 31.942 16 24.804.058 16 .058zm7.55 12.804l-7.965 9.804c-.333.402-.816.655-1.333.678h-.092c-.483 0-.954-.195-1.3-.54l-4.908-4.908c-.724-.724-.724-1.885 0-2.598s1.885-.724 2.598 0l3.46 3.46 6.69-8.23a1.84 1.84 0 0 1 2.586-.264c.782.655.908 1.816.264 2.598z"/>
+                        </svg>
+                    </div>
+                    <span class="badge-text">Завершён</span>
+                </div>
+                        
+                                        <div class="badge-with-icon badge-secondary badge-like">
+                    <div class="badge-icon-container">
+                        <svg class="ic_thumbs-up "><use href="/assets/icon/icons-sprite24.svg#ic_thumbs-up"></use></svg>
+                    </div>
+                    <span class="badge-text">10</span>
+                </div>
+            
+                        
+
+                        <div class="side-section">
+
+                                    <fanfic-more-dropdown class="jsVueComponent" :fanfic-id="13435456"
+                                           ></fanfic-more-dropdown>
+                                                    <div class="hot-fanfic" title="Работа размещена в разделе в качестве платной услуги">
+                    <svg class="ic_bubble-dark "><use href="/assets/icon/icons-sprite24.svg#ic_bubble-dark"></use></svg>
+                        <a href="/faq#about7">Горячая работа!</a>
+                    </div>
+                
+                                    <a href="/readfic/13435456?premiumVisit=1">
+                        <picture class="fanfic-hat-cover-picture">
+                            <source media="(max-width: 480px)" srcset="https://images.ficbook.net/fanfic-covers/m_Ve1EgoFLo8traGr9UHdZ7a02t4LHCj2H.jpg">
+                            <source media="(min-width: 481px)" srcset="https://images.ficbook.net/fanfic-covers/d_Ve1EgoFLo8traGr9UHdZ7a02t4LHCj2H.jpg">
+                            <img src="https://images.ficbook.net/fanfic-covers/m_Ve1EgoFLo8traGr9UHdZ7a02t4LHCj2H.jpg" alt="Мне больно..."
+                                 width="180px">
+                        </picture>
+                    </a>
+                            </div>
+
+            <dl class="fanfic-inline-info mt-5">
+                <dt>Автор:</dt>
+                <dd>
+                    <span class="author word-break">
+                        <a href="/authors/5960719">
+                            <svg class="ic_user "><use href="/assets/icon/icons-sprite24.svg#ic_user"></use></svg>Leka_official</a>
+                    </span>
+
+                                    </dd>
+            </dl>
+
+            <dl class="fanfic-inline-info">
+                <dt>Фэндом:</dt>
+                <dd>
+                                            <a href="/fanfiction/rpf/modern_talking"
+                           >Modern Talking</a>                                                                                        </dd>
+            </dl>
+
+                            <dl class="fanfic-inline-info">
+                    <dt>Пэйринг и персонажи:</dt>
+                    <dd>
+                                                                            <a href="/pairings/%D0%94%D0%B8%D1%82%D0%B5%D1%80%20%D0%91%D0%BE%D0%BB%D0%B5%D0%BD---%D0%A2%D0%BE%D0%BC%D0%B0%D1%81%20%D0%90%D0%BD%D0%B4%D0%B5%D1%80%D1%81"
+                               class=" pairing-link pairing-highlight">Дитер Болен/Томас Андерс</a>,                                                                            <a href="/pairings/%D0%9E%D0%96%D0%9F"
+                               class=" pairing-link">ОЖП</a>                                            </dd>
+                </dl>
+            
+            <dl class="fanfic-inline-info">
+                <dt>Размер:</dt>
+                <dd>
+                                        2 страницы,
+                    2 части</dd>
+            </dl>
+            <dl class="fanfic-inline-info">
+                <dt>
+                                            Дата завершения:
+                                    </dt>
+                <dd>
+                    28.04.2023
+                </dd>
+            </dl>
+                            <div class="tags">
+                    <span class="font-bold mr-5">Метки:</span>
+                    
+    
+    <a href="/tags/87"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >1980-е годы</a>
+
+    
+    <a href="/tags/1684"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Songfic</a>
+
+    
+    <a href="/tags/1803"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Боль</a>
+
+    
+    <a href="/tags/800"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Кровь / Травмы</a>
+
+    
+    <a href="/tags/1653"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Нецензурная лексика</a>
+
+    
+    <a href="/tags/2549"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Обоснованный ООС</a>
+
+    
+    <a href="/tags/018c4a74-54d6-77a8-a7b8-501577c2a46c"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Персонажи-геи</a>
+
+    
+    <a href="/tags/1157"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Повествование от нескольких лиц</a>
+
+    
+    <a href="/tags/39"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Сборник драбблов</a>
+
+    
+    <a href="/tags/3"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                 hidden         tag-spoiler        "
+        >Счастливый финал</a>
+
+    
+    <a href="/tags/1409"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Частичный ООС</a>
+
+    
+    <a href="/tags/2697"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Элементы драмы</a>
+
+    
+    <a href="/tags/2742"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Элементы романтики</a>
+
+    
+    <a href="/tags/2011"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Элементы юмора / Элементы стёба</a>
+
+
+    <strong class="show-hidden-tags-btn js-show-hidden-tags tag">
+         Спойлеры        ...
+    </strong>
+                </div>
+            
+            <div class="fanfic-description">
+                <div class="wrap word-break urlize-links fanfic-description-text">
+                    Боль... Уже одно слово вызывает неприятные ощущения, даже воспоминания... Что хуже? Физическая боль или душевная/сердечная? И то, и то, согласитесь...
+Только к физической боли со временем человек может привыкнуть, а к душевной нет и обычно такая боль заканчивается двумя способами... 
+Эти две зарисовки о разных видах боли...
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hide-fanfic-block class="jsVueComponent"
+        :path-to-settings="&quot;\/home\/preferences\/hidefanfics#settingsContent&quot;"
+         :pairings="[{&quot;pairingValue&quot;:&quot;\u0414\u0438\u0442\u0435\u0440 \u0411\u043e\u043b\u0435\u043d---\u0422\u043e\u043c\u0430\u0441 \u0410\u043d\u0434\u0435\u0440\u0441&quot;,&quot;readablePairing&quot;:&quot;\u0414\u0438\u0442\u0435\u0440 \u0411\u043e\u043b\u0435\u043d\/\u0422\u043e\u043c\u0430\u0441 \u0410\u043d\u0434\u0435\u0440\u0441&quot;}]"         :fanfic="{&quot;id&quot;:13435456,&quot;author_id&quot;:5960719,&quot;author_username&quot;:&quot;Leka_official&quot;,&quot;title&quot;:&quot;\u041c\u043d\u0435 \u0431\u043e\u043b\u044c\u043d\u043e...&quot;}"
+    ></hide-fanfic-block>
+</article>
+                                        <article class="
+    fanfic-inline
+     fanfic-inline-hot
+                        ">
+    <div class="js-toggle-description">
+        <h3 class="fanfic-inline-title">
+            <a class="visit-link"
+               href="/readfic/018a138f-ecb3-7a91-a187-73dd7f7ea747?premiumVisit=1">Clear
+            </a>
+        </h3>
+        
+        <div class="fanfic-main-info">
+
+            
+                                        
+    
+            <div
+            class="badge-with-icon direction direction-before-slash small-direction-slash"
+            title="Слэш — романтические и/или сексуальные взаимоотношения между мужчинами.">
+            <div class="badge-icon-container">
+                <svg class="ic_slash "><use href="/assets/icon/icons-sprite24.svg#ic_slash"></use></svg>
+            </div>
+            <span class="badge-text">Слэш</span>
+        </div>
+    
+
+                        
+                        <div class="badge-with-icon badge-rating-R"
+                    title="R — фанфики, в которых присутствуют эротические сцены или насилие без детального графического описания.">
+                <span class="badge-text">R</span>
+            </div>
+
+                                                                <div class="badge-with-icon badge-secondary badge-status-frozen">
+                    <div class="badge-icon-container">
+                        <svg class="ic_frozen "><use href="/assets/icon/icons-sprite24.svg#ic_frozen"></use></svg>
+                    </div>
+                    <span class="badge-text">Заморожен</span>
+                </div>
+            
+                                        <div class="badge-with-icon badge-secondary badge-like">
+                    <div class="badge-icon-container">
+                        <svg class="ic_thumbs-up "><use href="/assets/icon/icons-sprite24.svg#ic_thumbs-up"></use></svg>
+                    </div>
+                    <span class="badge-text">63</span>
+                </div>
+            
+                        
+
+                        <div class="side-section">
+
+                                    <fanfic-more-dropdown class="jsVueComponent" :fanfic-id="13819216"
+                                           ></fanfic-more-dropdown>
+                                                    <div class="hot-fanfic" title="Работа размещена в разделе в качестве платной услуги">
+                    <svg class="ic_bubble-dark "><use href="/assets/icon/icons-sprite24.svg#ic_bubble-dark"></use></svg>
+                        <a href="/faq#about7">Горячая работа!</a>
+                    </div>
+                
+                            </div>
+
+            <dl class="fanfic-inline-info mt-5">
+                <dt>Автор:</dt>
+                <dd>
+                    <span class="author word-break">
+                        <a href="/authors/3120209">
+                            <svg class="ic_user "><use href="/assets/icon/icons-sprite24.svg#ic_user"></use></svg>ричич</a>
+                    </span>
+
+                                    </dd>
+            </dl>
+
+            <dl class="fanfic-inline-info">
+                <dt>Фэндом:</dt>
+                <dd>
+                                            <a href="/fanfiction/rpf/ateez"
+                           >ATEEZ</a>                                                                                        </dd>
+            </dl>
+
+                            <dl class="fanfic-inline-info">
+                    <dt>Пэйринг и персонажи:</dt>
+                    <dd>
+                                                                            <a href="/pairings/%D0%A7%D1%85%D0%B2%D0%B5%20%D0%A1%D0%B0%D0%BD---%D0%A7%D0%BE%D0%BD%20%D0%A3%D1%91%D0%BD"
+                               class=" pairing-link pairing-highlight">Чхве Сан/Чон Уён</a>,                                                                            <a href="/pairings/%D0%9A%D0%B0%D0%BD%20%D0%81%D1%81%D0%B0%D0%BD"
+                               class=" pairing-link">Кан Ёсан</a>                                            </dd>
+                </dl>
+            
+            <dl class="fanfic-inline-info">
+                <dt>Размер:</dt>
+                <dd>
+                                        23 страницы,
+                    3 части</dd>
+            </dl>
+            <dl class="fanfic-inline-info">
+                <dt>
+                                            Дата обновления:
+                                    </dt>
+                <dd>
+                    18.09.2023
+                </dd>
+            </dl>
+                            <div class="tags">
+                    <span class="font-bold mr-5">Метки:</span>
+                    
+    
+    <a href="/tags/1683"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >AU</a>
+
+    
+    <a href="/tags/1653"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                 tag-adult"
+        >Нецензурная лексика</a>
+
+    
+    <a href="/tags/1648"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >ООС</a>
+
+    
+    <a href="/tags/2447"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Упоминания жестокости</a>
+
+    
+    <a href="/tags/2207"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Упоминания насилия</a>
+
+    
+    <a href="/tags/2696"
+       onclick="fym('reachGoal', 'click-tag'); return true;"
+       class="tag
+                                                "
+        >Элементы ангста</a>
+
+
+                </div>
+            
+            <div class="fanfic-description">
+                <div class="wrap word-break urlize-links fanfic-description-text">
+                    Сан сбавляет скорость перед поворотом и давит педаль тормоза в пол, как только в свете фар мелькает чья-то фигура, выбежавшая с обочины на проезжую часть, будто прямо под колёса красного внедорожника.
+
+Встретить ночью посреди леса жертву похищения было последним, чего Сан хотел после тяжелого дня.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hide-fanfic-block class="jsVueComponent"
+        :path-to-settings="&quot;\/home\/preferences\/hidefanfics#settingsContent&quot;"
+         :pairings="[{&quot;pairingValue&quot;:&quot;\u0427\u0445\u0432\u0435 \u0421\u0430\u043d---\u0427\u043e\u043d \u0423\u0451\u043d&quot;,&quot;readablePairing&quot;:&quot;\u0427\u0445\u0432\u0435 \u0421\u0430\u043d\/\u0427\u043e\u043d \u0423\u0451\u043d&quot;}]"         :fanfic="{&quot;id&quot;:13819216,&quot;author_id&quot;:3120209,&quot;author_username&quot;:&quot;\u0440\u0438\u0447\u0438\u0447&quot;,&quot;title&quot;:&quot;Clear&quot;}"
+    ></hide-fanfic-block>
+</article>
+                                <a href="/fanfiction" class="btn btn-default mb-5">
+                    Все фанфики из раздела «Горячие работы»
+                </a>
+                <a href="/faq#about7"
+                   class="btn btn-default mb-5">Как сюда попасть?</a>
+            </section>
+        
+                    <section class="mb-10">
+                <h2 class="section-title">Горячие заявки</h2>
+                <div class="request-area mb-0">
+                                            <article class="request-thumb">
+    <header class="post-head">
+        <div class="area col-sm-14 col-sm-push-2 px-0">
+                            <a class="hot-request" href="/faq#about8">
+                    <svg class="ic_lamp7 "><use href="/assets/icon/icons-sprite24.svg#ic_lamp7"></use></svg>
+                    <span title="Работа размещена в разделе в качестве платной услуги">Горячая заявка!</span>
+                </a>
+                        <h3>
+                <a href="/requests/018c4a63-9c06-7326-a451-071de8726c75?premiumVisit=1" class="visit-link">
+                    Семья - слабость или сила?
+                </a>
+            </h3>
+
+            <strong class="title mt-5">
+                <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                                    <a href="/fanfiction/books/rouling_dzhoan___garri_potter"
+                       ><span class="text">Роулинг Джоан «Гарри Поттер»</span></a>,                                    <a href="/fanfiction/movies_and_tv_series/garri_potter"
+                       ><span class="text">Гарри Поттер</span></a>                                            (кроссовер)
+                                                                </strong>
+
+            <section class="request-description">
+                <div>
+                    <strong>Направленности:</strong>
+                                                                    
+    
+            <svg class="ic_mixed "><use href="/assets/icon/icons-sprite24.svg#ic_mixed"></use></svg>
+     Смешанная                                    </div>
+                <div>
+                    <strong>Рейтинг:</strong>
+                                            <span class="">R</span>
+                                    </div>
+                                    <div class="tags">
+                            <a href="/tags/1683/requests"
+       class="tag
+                                "
+        >AU</a>
+    <a href="/tags/1665/requests"
+       class="tag
+                                "
+        >Ангст</a>
+    <a href="/tags/1668/requests"
+       class="tag
+                                "
+        >Драма</a>
+    <a href="/tags/1653/requests"
+       class="tag
+                                 tag-adult"
+        >Нецензурная лексика</a>
+    <a href="/tags/1648/requests"
+       class="tag
+                                "
+        >ООС</a>
+    <a href="/tags/1694/requests"
+       class="tag
+                                "
+        >Учебные заведения</a>
+                    </div>
+                            </section>
+                            <div class="bottom-line"></div>
+            <div class="post-content">
+                <p>Описание событий с пятилетнего возраста главных героев. Хотелось бы увидеть отношения в семье Малфоев, в семье Дурслей и в семье Грейнджер, до поступления в Хог. Драко, Гермиона и Гарри - лучшие друзья (где, когда и как они познакомятся - на усмотрение автора. Это может произойти до Хогвартса, может ...</p>
+            </div>
+        </div>
+
+        <div class="col-sm-2 col-sm-pull-14 px-0 flex-box">
+            <div class="container-counter disabled"
+                 data-request-id="697109"
+                 data-like-url="/ajax/requests/like"
+                 data-unlike-url="/ajax/requests/unlike"
+                 data-is-liked="false">
+                                    <svg class="ic_thumbs-up "><use href="/assets/icon/icons-sprite24.svg#ic_thumbs-up"></use></svg>
+                                <span class="request-likes-counter">9</span>
+            </div>
+
+            <div class="container-counter disabled"
+                 data-bookmark-url="/ajax/requests/bookmark"
+                 data-unbookmark-url="/ajax/requests/unbookmark"
+                 data-is-bookmarked="false"
+                 data-request-id="697109">
+                                    <svg class="ic_star-empty "><use href="/assets/icon/icons-sprite24.svg#ic_star-empty"></use></svg>
+                                <span class="request-bookmark-counter">7</span>
+            </div>
+
+                            <span class="container-counter disabled">
+                    <svg class="ic_book "><use href="/assets/icon/icons-sprite24.svg#ic_book"></use></svg>
+                    <span class="small">нет работ</span>
+                </span>
+                    </div>
+    </header>
+</article>
+</div>
+</section>
+    </div>
+             </main>
+
             <footer class="page-footer" id="footer">
                 <section class="page-footer__pwa">
                     <div class="page-footer__pwa-cat"></div>
 
-                    <div class="page-footer__pwa-app-name">Blu Book</div>
+                    <div class="page-footer__pwa-app-name">Blu Buk</div>
 
                 </section>
 
@@ -306,7 +2048,7 @@
                 </section>
 
                 <section class="page-footer__copyright">
-                    <span>© 2024 Blu Book | <a href="mailto:support@ficbook.net">support@blubook.com</a></span>
+                    <span>© 2024 Blu Buk | <a href="mailto:support@ficbook.net">support@blubuk.com</a></span>
                     <a href="#" class="js-show-corner-cat page-footer__copyright-paw"><svg class="ic_paw "><use href="/assets/icons/icons-sprite24.svg#ic_paw"></use></svg></a>
                 </section>
             </footer>
@@ -317,18 +2059,25 @@
         </div>
     </div>
 </div>
-
+    </div>
 <section class="sticky-bottom-block">
     <div class="fb-ads fb-ads-block d-flex small-ad" data-place-id="all-pages-sticky-bottom"></div>
     <span id="toTop"><svg class="ic_arrow-up "><use href="/assets/icons/icons-sprite24.svg#ic_arrow-up"></use></svg></span>
     </section>
 
 <div id="cornerCat" class="hidden"></div>
+    </div>
 
 <div class="fb-ads fb-ads-block d-flex desktop-ad-stick-to-left" data-place-id="all-pages-sticky-left"></div>
+
 <script src="assets/js/darktheme.js"></script>
 <script src="assets/js/swiper.js"></script>
 <script src="assets/js/dop.js"></script>
 <script src="assets/js/mymodal/modal.js"></script>
+<script src="assets/js/dropdown.js"></script>
+<script src="assets/js/Text.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="assets/js/Vue.js"></script>
+
 </body>
 </html>
