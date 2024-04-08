@@ -1,0 +1,16 @@
+.dropdown[data-v-6f77def8]{height:38px}.dropdown[data-v-6f77def8] .vs__dropdown-menu{filter:none}.dropdown[data-v-6f77def8] .vs__dropdown-toggle{min-height:initial;height:100%}
+
+.vs__search::placeholder {
+    animation: placeholderAnimation 3s steps(50) infinite; /* 50 - количество шагов анимации */
+  }
+
+  @keyframes placeholderAnimation {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
