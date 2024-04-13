@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Blu Buk</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/modal.css">
+    <link rel="stylesheet" href="assets/dropdown.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    
+
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#542a00">
+    <meta name="apple-mobile-web-app-title" content="Blu Buk">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Blu Buk">
+    <meta name="msapplication-TileColor" content="#542a00">
+    <meta name="theme-color" content="#542a00">
+
+
+                            <script src="https://yandex.ru/ads/system/header-bidding.js"></script>
+            <link rel="preconnect" href="https://ads.betweendigital.com" crossorigin>
+            <script>window.yaContextCb = window.yaContextCb || []</script>
+            <script src="https://yandex.ru/ads/system/context.js" async></script>
+            <script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+            <script src="https://content.adriver.ru/AdRiverFPS.js"></script>
+</head>
+
+<body>
+    
+<div class="container">
+    <div class="col-lg-16 main-container">
+        <div class="book-container">
+            <div class="book-stiches-horizontal hidden-xs"></div>
+            <div class="book-stiches-vertical hidden-xs"></div>
+
+            <div class="book-corner-top hidden-xs"></div>
+            <div class="book-corner-bottom hidden-xs"></div>
+
+            <div class="header-t">
+
+                <nav class="add-nav pull-left hidden-xs top-nav">
+                    <a href="/faq" class="faq">FAQ</a>
+                    <a href="/rules" class="faq">Правила</a>
+                    <span class="dark-theme-switcher js-dark-theme-switcher">
+                        <svg width="14px" height="14px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" id="toggle">
+                            <g id="Lager_94" data-name="Lager 94" transform="translate(0)">
+                              <path id="Path_70" data-name="Path 70" d="M12.516,4.509A12,12,0,0,0,22.3,19.881,12.317,12.317,0,0,0,24,20a11.984,11.984,0,0,0,3.49-.514,12.1,12.1,0,0,1-9.963,8.421A12.679,12.679,0,0,1,16,28,12,12,0,0,1,12.516,4.509M16,0a16.5,16.5,0,0,0-2.212.15A16,16,0,0,0,16,32a16.526,16.526,0,0,0,2.01-.123A16.04,16.04,0,0,0,31.85,18.212,16.516,16.516,0,0,0,32,15.944,1.957,1.957,0,0,0,30,14a2.046,2.046,0,0,0-1.23.413A7.942,7.942,0,0,1,24,16a8.35,8.35,0,0,1-1.15-.08,7.995,7.995,0,0,1-5.264-12.7A2.064,2.064,0,0,0,16.056,0Z" fill="#f6f7f7"/>
+                            </g>
+                          </svg>
+                    </span>
+                </nav>
+
+                <strong class="logo visible-xs">
+                    <a href="/">
+                        <img src="assets/logo/mini_logo.png" alt="Logo">
+                    </a>
+                </strong>
+                
+                <div>
+                    <a href="index.html"><img src="assets/logo/logo2m.png" class="logohide" style="margin-bottom: 20px;"></a>
+                </div>
+                <div class="add-nav pull-left hidden-xs top-nav">
+                    <a href="#signin" data-toggle="modal" data-target=".log-sign">Авторизация</a>
+                    <a href="#signup" data-toggle="modal" data-target=".log-sign">Регистрация</a>
+                </div>
+                <div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+                          
+                          <div class="bs-example bs-example-tabs">
+                              <ul id="myTab" class="nav nav-tabs">
+                                <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Авторизация</a></li>
+                                <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Регистрация</a></li>
+                                
+                              </ul>
+                          </div>
+                        <div class="modal-body">
+                          <div id="myTabContent" class="tab-content">
+                         
+                          <div class="tab-pane fade active in" id="signin">
+                              <form class="form-horizontal">
+                              <fieldset>
+                              <!-- Sign In Form -->
+                              <!-- Text input-->
+                                
+                                 <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Email</label></div>
+                                
+                                
+                              <!-- Password input-->
+                              <div class="group">
+                  <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Пароль</label>
+                      </div>
+                  <em>minimum 6 characters</em>
+                  
+                             <div class="forgot-link">
+                              <a href="#forgot" data-toggle="modal" data-target="#forgot-password"> Я забыл пароль</a>
+                              </div>
+                              
+                  
+                              <!-- Button -->
+                              <div class="control-group">
+                                <label class="control-label" for="signin"></label>
+                                <div class="controls">
+                                  <button id="signin" name="signin" class="btn btn-primary btn-block">Войти</button>
+                                </div>
+                              </div>
+                              </fieldset>
+                              </form>
+                          </div>
+                            
+                            
+                          <div class="tab-pane fade" id="signup">
+                              <form class="form-horizontal">
+                              <fieldset>
+                              <!-- Sign Up Form -->
+                              <!-- Text input-->
+                              <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Имя</label></div>
+                              
+                              <!-- Text input-->
+                              <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Фамилия</label></div>
+                              
+                              <!-- Password input-->
+                              <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Email</label></div>
+                              
+                              <!-- Text input-->
+                              <div class="group">
+                  <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Пароль</label></div>
+                                <em>4-8 Символов</em>
+                              
+                              
+                              
+                              
+                              <!-- Button -->
+                              <div class="control-group">
+                                <label class="control-label" for="confirmsignup"></label>
+                                <div class="controls">
+                                  <button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Зарегестрироваться</button>
+                                </div>
+                              </div>
+                              </fieldset>
+                              </form>
+                        </div>
+                      </div>
+                        </div>
+                        <!--<div class="modal-footer">
+                        <center>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </center>
+                        </div>-->
+                      </div>
+                    </div>
+                  </div>
+                    
+                     
+                  
+                  <!--modal2-->
+                  
+                  <div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Password will be sent to your email</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form-horizontal">
+                          <fieldset>
+                          <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Email address</label></div>
+                          
+                          
+                          <div class="control-group">
+                                <label class="control-label" for="forpassword"></label>
+                                <div class="controls">
+                                  <button id="forpasswodr" name="forpassword" class="btn btn-primary btn-block">Send</button>
+                                </div>
+                              </div>
+                            </fieldset>
+                              </form>
+                            
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="header-holder">
+                <div class="header-m visible-xs">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="ic_bar"></span>
+                        <span class="ic_bar"></span>
+                        <span class="ic_bar"></span>
+                    </button>
+                </div>
+                <div class="header-b">
+                    <strong class="logo hidden-xs">
+                                                                                    <a href="/">
+
+</a>
+
+                    </strong>
+
+                </div>
+
+                                    
+                
+                <div class="fb-ads fb-ads-block d-flex mx-10 hidden-xs" data-place-id="all-pages-top"></div>
+            </div>
+
+            <nav class="navbar navbar-default">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active home">
+                            <a href="index.html">Домой</span></a>
+                        </li>
+                        <li >
+                            <a href="fanfiction.html">Фанфики</a>
+                        </li>
+                        <li >
+                            <a href="authors.html">Авторы</a></li>
+                        <li >
+                            <a href="/popular-fanfics-376846">Популярное</a>
+                        </li>
+                        <li><a href="/faq" class="visible-xs">FAQ</a></li>
+                        <li><a href="/rules" class="visible-xs">Правила</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/home/addfic" rel="nofollow"><svg class="ic_plus-circle "><use href="/assets/icon/icons-sprite24.svg#ic_plus-circle"></use></svg> Добавить фанфик</a>
+                        </li>
+                        <li >
+                            <a href="find.html" rel="nofollow"><svg class="ic_search "><use href="/assets/icon/icons-sprite24.svg#ic_search"></use></svg> Поиск фанфиков</a>
+                        </li>
+                        <li><a href="/randomfic" rel="nofollow"><svg class="ic_dice "><use href="/assets/icon/icons-sprite24.svg#ic_dice"></use></svg> Случайная работа</a></li>
+                        <li>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main id="main" class="clearfix">
+                        
+                        <div class="main-holder alt">
+        <section class="content-section">
+
+    <h1 class="js-find-page-header">Поиск фанфиков</h1>
+
+    <form class="find-form mb-30" action="/find-fanfics-846555#result" method="get" name="find-form">
+
+        <div class="form-group form-group-sm">
+            <div class="radio">
+                <label>
+                    <input class="jsFandomFilter" type="radio" name="fandom_filter" value="any">
+                    Все
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input class="jsFandomFilter" type="radio" name="fandom_filter" value="originals">
+                    Ориджиналы
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input class="jsFandomFilter" type="radio" name="fandom_filter" value="group">
+                    Все фанфики в группе фэндомов
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input class="jsFandomFilter" type="radio" name="fandom_filter" value="fandom" checked="">
+                    Фанфики по конкретным фэндомам
+                </label>
+            </div>
+
+            <div class="jsFindFandomGroupSelector sub-category" hidden="">
+                <label>Группа фэндомов</label>
+
+                <select class="form-control" name="fandom_group_id">
+                    <option value="1">Аниме и манга</option>
+                    <option value="2">Книги</option>
+                    <option value="3">Мультфильмы</option>
+                    <option value="4">Игры</option>
+                    <option value="5">Фильмы и сериалы</option>
+                    <option value="6">Другое</option>
+                    <option value="9">Известные люди (RPF)</option>
+                    <option value="10">Комиксы</option>
+                    <option value="11">Мюзиклы</option>
+                </select>
+            </div>
+
+            <div class="jsFindFandomSelector sub-category">
+                <div class="form-group form-group-sm">
+                    <label>Фэндомы</label>
+
+                    <div style="min-height: 34px">
+                        <div class="fandom-selector jsVueComponent"><div class="selected-fandoms"></div><div><div dir="auto" class="v-select vs--single vs--searchable"><div id="vs1__combobox" class="vs__dropdown-toggle" role="combobox" aria-expanded="false" aria-owns="vs1__listbox" aria-label="Search for option"><div class="vs__selected-options"><input class="vs__search" placeholder="Укажите фэндом" aria-autocomplete="list" aria-labelledby="vs1__combobox" aria-controls="vs1__listbox" type="search" autocomplete="off"></div><div class="vs__actions"><button type="button" class="vs__clear" title="Clear Selected" aria-label="Clear Selected" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z"></path></svg></button><svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" role="presentation" class="vs__open-indicator"><path d="M9.211364 7.59931l4.48338-4.867229c.407008-.441854.407008-1.158247 0-1.60046l-.73712-.80023c-.407008-.441854-1.066904-.441854-1.474243 0L7 5.198617 2.51662.33139c-.407008-.441853-1.066904-.441853-1.474243 0l-.737121.80023c-.407008.441854-.407008 1.158248 0 1.600461l4.48338 4.867228L7 10l2.211364-2.40069z"></path></svg><div class="vs__spinner" style="display: none;">Loading...</div></div></div><ul id="vs1__listbox" role="listbox" style="display: none; visibility: hidden;"></ul></div></div></div>
+                    </div>
+
+                    <div class="small-text">
+                        <label class="font-light">
+                            <input name="deny_other" type="checkbox" value="1">
+                            исключить любые фэндомы, кроме указанных
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group form-group-sm">
+                    <label>Пэйринги</label>
+                    <div style="min-height: 28px;">
+                        <span data-v-31b3555e="" class="jsVueComponent">Сначала выберите фэндом</span>
+                    </div>
+                    <div class="small-text">
+                        <label class="font-light">
+                            <input name="pairings_order" type="checkbox" value="1">
+                            учитывать порядок персонажей внутри пейрингов
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="form-group form-group-sm">
+                    <label>Исключить пэйринги</label>
+                    <div style="min-height: 28px;">
+                        <span data-v-31b3555e="" class="jsVueComponent">Сначала выберите фэндом</span>
+                    </div>
+                    <div class="small-text">
+                        <label class="font-light">
+                            <input name="pairings_exclude_order" type="checkbox" value="1">
+                            учитывать порядок персонажей внутри пейрингов
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-category jsExcludeFandomSelector form-group form-group-sm">
+                <label>Исключить фэндомы</label>
+
+                <div class="fandom-selector jsVueComponent"><div class="selected-fandoms"></div><div><div dir="auto" class="v-select vs--single vs--searchable"><div id="vs2__combobox" class="vs__dropdown-toggle" role="combobox" aria-expanded="false" aria-owns="vs2__listbox" aria-label="Search for option"><div class="vs__selected-options"><input class="vs__search" placeholder="Укажите фэндом" aria-autocomplete="list" aria-labelledby="vs2__combobox" aria-controls="vs2__listbox" type="search" autocomplete="off"></div><div class="vs__actions"><button type="button" class="vs__clear" title="Clear Selected" aria-label="Clear Selected" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z"></path></svg></button><svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" role="presentation" class="vs__open-indicator"><path d="M9.211364 7.59931l4.48338-4.867229c.407008-.441854.407008-1.158247 0-1.60046l-.73712-.80023c-.407008-.441854-1.066904-.441854-1.474243 0L7 5.198617 2.51662.33139c-.407008-.441853-1.066904-.441853-1.474243 0l-.737121.80023c-.407008.441854-.407008 1.158248 0 1.600461l4.48338 4.867228L7 10l2.211364-2.40069z"></path></svg><div class="vs__spinner" style="display: none;">Loading...</div></div></div><ul id="vs2__listbox" role="listbox" style="display: none; visibility: hidden;"></ul></div></div></div>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label>Количество страниц</label>
+            <div class="radio">
+                <label>
+                    <input name="pages_range" type="radio" class="js-pages-range" data-page-min="0" data-page-max="0" value="1" required="" checked="">
+                    Любое
+                </label>
+            </div>
+
+            <div class="radio">
+                <label>
+                    <input name="pages_range" type="radio" class="js-pages-range" data-page-min="0" data-page-max="3" value="2" required="">
+                    До 3
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="pages_range" type="radio" class="js-pages-range" data-page-min="0" data-page-max="20" value="3" required="">
+                    До 20
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="pages_range" type="radio" class="js-pages-range" data-page-min="21" data-page-max="70" value="4" required="">
+                    От 21 до 70
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="pages_range" type="radio" class="js-pages-range" data-page-min="71" data-page-max="0" value="5" required="">
+                    От 71
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="pages_range" type="radio" class="js-pages-range" data-page-min="" data-page-max="" value="6" required="">
+                    другой размер
+                </label>
+            </div>
+
+            <div class="form-inline js-custom-page-range hidden">
+                <label>
+                    От
+                    <input class="form-control short-number-input js-custom-range-page-min" type="number" min="0" max="9999" name="pages_min" value="">
+                </label>
+                <label>
+                    до
+                    <input class="form-control short-number-input js-custom-range-page-max" type="number" min="0" max="9999" name="pages_max" value="">
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label>Со статусом</label>
+            <div class="checkbox">
+                <label>
+                    <input class="js-status-in-process" name="statuses[]" type="checkbox" value="1">
+                    <span>В процессе</span>
+                </label>
+            </div>
+
+                            <div class="checkbox ml-15">
+                    <label>
+                        <input class="js-size-checkbox" name="sizes[]" type="checkbox" value="2" disabled="">
+                        <span>Мини</span>
+                    </label>
+                </div>
+                            <div class="checkbox ml-15">
+                    <label>
+                        <input class="js-size-checkbox" name="sizes[]" type="checkbox" value="3" disabled="">
+                        <span>Миди</span>
+                    </label>
+                </div>
+                            <div class="checkbox ml-15">
+                    <label>
+                        <input class="js-size-checkbox" name="sizes[]" type="checkbox" value="4" disabled="">
+                        <span>Макси</span>
+                    </label>
+                </div>
+            
+            <div class="checkbox">
+                <label>
+                    <input name="statuses[]" type="checkbox" value="2">
+                    <span>Завершён</span>
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input name="statuses[]" type="checkbox" value="3">
+                    <span>Заморожен</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label>
+                С одним из
+                <div class="d-inline-block jsVueComponent"><span>
+        <span class="help"><b>рейтингов <svg class="ic_help "><use href="/assets/icons/icons-sprite26.svg#ic_help"></use></svg></b></span>
+    </span><!--v-if--></div>
+            </label>
+
+                            <div class="checkbox">
+                    <label>
+                        <input name="ratings[]" type="checkbox" value="5">
+                        G
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="ratings[]" type="checkbox" value="6">
+                        PG-13
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="ratings[]" type="checkbox" value="7">
+                        R
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="ratings[]" type="checkbox" value="8">
+                        NC-17
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="ratings[]" type="checkbox" value="9">
+                        NC-21
+                    </label>
+                </div>
+                    </div>
+
+        <div class="form-group form-group-sm">
+            <label>Перевод или оригинальный текст</label>
+
+            <div class="radio">
+                <label>
+                    <input name="transl" type="radio" value="1" checked="">
+                    Все равно
+                </label>
+            </div>
+
+            <div class="radio">
+                <label>
+                    <input name="transl" type="radio" value="2">
+                    Перевод с иностранного языка
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="transl" type="radio" value="3">
+                    Оригинальный текст
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label>
+                Одной из
+                <div class="d-inline-block jsVueComponent"><span>
+        <span class="help"><b>направленностей <svg class="ic_help "><use href="/assets/icons/icons-sprite26.svg#ic_help"></use></svg></b></span>
+    </span><!--v-if--></div>
+            </label>
+                            <div class="checkbox">
+                    <label>
+                        <input name="directions[]" type="checkbox" value="1">
+                        Джен
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="directions[]" type="checkbox" value="2">
+                        Гет
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="directions[]" type="checkbox" value="3">
+                        Слэш
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="directions[]" type="checkbox" value="4">
+                        Фемслэш
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="directions[]" type="checkbox" value="7">
+                        Другие виды отношений
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="directions[]" type="checkbox" value="6">
+                        Смешанная
+                    </label>
+                </div>
+                            <div class="checkbox">
+                    <label>
+                        <input name="directions[]" type="checkbox" value="5">
+                        Статья
+                    </label>
+                </div>
+                    </div>
+
+        <div class="form-group form-group-sm">
+            <label>Горячие работы</label>
+            <div class="checkbox">
+                <label>
+                    <input name="only_premium" type="checkbox" value="1">
+                    Фанфики из раздела «Горячие работы»
+                </label>
+            </div>
+        </div>
+
+        <section class="form-group form-group-sm jsVueComponent"><label>Включить метки</label><div><div class="tags-selector"><section class="list-of-categories"><div class="js-link category">Жанры</div><div class="js-link category">Предупреждения</div><div class="js-link category hidden">География и этносы</div><div class="js-link category hidden">Заболевания, расстройства и фобии</div><div class="js-link category hidden">Занятия и профессии</div><div class="js-link category hidden">Исторические периоды и события</div><div class="js-link category hidden">Кинки (18+)</div><div class="js-link category hidden">Мистические и фантастические существа</div><div class="js-link category hidden">Ориентация, пол и гендер</div><div class="js-link category hidden">Отношения</div><div class="js-link category hidden">Праздники</div><div class="js-link category hidden">Промежуточные направленности и жанры</div><div class="js-link category hidden">Сверхспособности</div><div class="js-link category hidden">Свободная форма</div><div class="js-link category hidden">Сеттинг</div><div class="js-link category hidden">Спорт</div><div class="js-link category hidden">Субкультуры</div><div class="js-link category hidden">Тропы</div><div class="js-link category hidden">Фандомные мероприятия</div><div class="js-link category hidden">Фандомные спецметки</div><div class="js-link category hidden">Формат</div><div class="js-link link-dotted small-text">... и ещё 19 категорий</div></section><div class="tags-selector" id="tags_include"><div class="header-container"><div class="selected-tags"></div><input type="text" class="search-input" placeholder="Начните вводить или выберите из предложенных..." maxlength="100"><select multiple="" name="tags_include[]" class="hidden js-reject-duplicate" maxlength="30"></select></div><!--v-if--></div><div class="clearfix footer"><div class="float-right text-muted">0/30</div><!--v-if--></div></div></div><label class="mt-15">Исключить метки</label><div><div class="tags-selector"><section class="list-of-categories"><div class="js-link category">Жанры</div><div class="js-link category">Предупреждения</div><div class="js-link category hidden">География и этносы</div><div class="js-link category hidden">Заболевания, расстройства и фобии</div><div class="js-link category hidden">Занятия и профессии</div><div class="js-link category hidden">Исторические периоды и события</div><div class="js-link category hidden">Кинки (18+)</div><div class="js-link category hidden">Мистические и фантастические существа</div><div class="js-link category hidden">Ориентация, пол и гендер</div><div class="js-link category hidden">Отношения</div><div class="js-link category hidden">Праздники</div><div class="js-link category hidden">Промежуточные направленности и жанры</div><div class="js-link category hidden">Сверхспособности</div><div class="js-link category hidden">Свободная форма</div><div class="js-link category hidden">Сеттинг</div><div class="js-link category hidden">Спорт</div><div class="js-link category hidden">Субкультуры</div><div class="js-link category hidden">Тропы</div><div class="js-link category hidden">Фандомные мероприятия</div><div class="js-link category hidden">Фандомные спецметки</div><div class="js-link category hidden">Формат</div><div class="js-link link-dotted small-text">... и ещё 19 категорий</div></section><div class="tags-selector" id="tags_exclude"><div class="header-container"><div class="selected-tags"></div><input type="text" class="search-input" placeholder="Начните вводить или выберите из предложенных..." maxlength="100"><select multiple="" name="tags_exclude[]" class="hidden js-reject-duplicate" maxlength="30"></select></div><!--v-if--></div><div class="clearfix footer"><div class="float-right text-muted">0/30</div><!--v-if--></div></div></div></section>
+
+        <div class="form-group form-group-sm js-author_picker_container">
+            <label>Поиск по автору</label>
+            <div class="checkbox">
+                <label>
+                    <input name="author" type="checkbox" value="1">
+                    Искать среди работ автора
+                </label>
+            </div>
+
+            <div class="js-author_picker_wrapper  hidden ">
+                <div class="jsVueComponent"><!--v-if--><div dir="auto" class="v-select vs--single vs--searchable"><div id="vs3__combobox" class="vs__dropdown-toggle" role="combobox" aria-expanded="false" aria-owns="vs3__listbox" aria-label="Search for option"><div class="vs__selected-options"><input class="vs__search" placeholder="Поиск авторов" aria-autocomplete="list" aria-labelledby="vs3__combobox" aria-controls="vs3__listbox" type="search" autocomplete="off"></div><div class="vs__actions"><button type="button" class="vs__clear" title="Clear Selected" aria-label="Clear Selected" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z"></path></svg></button><svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" role="presentation" class="vs__open-indicator"><path d="M9.211364 7.59931l4.48338-4.867229c.407008-.441854.407008-1.158247 0-1.60046l-.73712-.80023c-.407008-.441854-1.066904-.441854-1.474243 0L7 5.198617 2.51662.33139c-.407008-.441853-1.066904-.441853-1.474243 0l-.737121.80023c-.407008.441854-.407008 1.158248 0 1.600461l4.48338 4.867228L7 10l2.211364-2.40069z"></path></svg><div class="vs__spinner" style="display: none;">Loading...</div></div></div><ul id="vs3__listbox" role="listbox" style="display: none; visibility: hidden;"></ul></div></div>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label>Количество оценок</label>
+            <div class="form-inline">
+                От
+                <input class="form-control short-number-input" type="number" min="0" max="999999" name="likes_min" value="">
+                до
+                <input class="form-control short-number-input" type="number" min="1" max="999999" name="likes_max" value="">
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label>Количество наград</label>
+            <div class="form-inline">
+                От
+                <input class="form-control short-number-input" type="number" min="0" max="999999" name="rewards_min" value="">
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label>Поиск по дате</label>
+
+            <div class="checkbox">
+                <label>
+                    <input class="jsFindDateCreate" name="dateFilterCreate" type="checkbox" value="1">
+                    по дате добавления
+                </label>
+                <div class="datepickerCreateContainer" style="display: none">
+                    <input class="jsDatepicker flatpickr-input" type="text" name="date_create_min" value="2024-03-08" readonly="readonly">
+                    <input class="jsDatepicker flatpickr-input" type="text" name="date_create_max" value="2024-04-08" readonly="readonly">
+                </div>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input class="jsFindDateUpdate" name="dateFilterUpdate" type="checkbox" value="1">
+                    по дате последнего обновления
+                </label>
+
+                <div class="datepickerUpdateContainer" style="display: none">
+                    <input class="jsDatepicker flatpickr-input" type="text" name="date_update_min" value="2024-03-08" readonly="readonly">
+                    <input class="jsDatepicker flatpickr-input" type="text" name="date_update_max" value="2024-04-08" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm">
+            <label for="idTitleInput">В названии которого есть слова</label>
+            <input id="idTitleInput" class="form-control" type="text" name="title" value="" maxlength="60">
+        </div>
+
+        <div class="block-separator my-30"></div>
+
+        
+        <div class="form-group form-group-sm">
+            <label>Отсортировать результат</label>
+
+            <div class="radio">
+                <label>
+                    <input name="sort" type="radio" value="1" checked="">
+                    по оценкам читателей (лучшее наверху)
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="sort" type="radio" value="2">
+                    по количеству отзывов
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="sort" type="radio" value="3">
+                    по дате обновления (от новых к старым)
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="sort" type="radio" value="9">
+                    по дате обновления (от старых к новым)
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="sort" type="radio" value="4">
+                    по количеству страниц
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="sort" type="radio" value="8">
+                    по количеству наград
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="sort" type="radio" value="5">
+                    20 случайных работ
+                </label>
+            </div>
+        </div>
+
+        <input type="hidden" name="rnd" value="1603768245">
+
+        <div class="fb-ads fb-ads-block d-flex small-ad" data-place-id="find-page-above-search-button"></div>
+
+        <input type="submit" value="Найти!" name="find" class="btn btn-default btn-block" onclick="fym('reachGoal', 'search-to-taste'); return true;">
+
+        <div class="fb-ads fb-ads-block d-flex " data-place-id="find-page-under-search-button"></div>
+    </form>
+
+            </section>
+    </div>
+
+                                    </main>
+
+            <footer class="page-footer" id="footer">
+                <section class="page-footer__pwa">
+                    <div class="page-footer__pwa-cat"></div>
+
+                    <div class="page-footer__pwa-app-name">Blu Buk</div>
+
+                </section>
+
+                <section class="page-footer__media">
+                    <a href="#" target="_blank" rel="nofollow"> <svg class="ic_vk "><use href="/assets/icon/icons-sprite24.svg#ic_vk"></use></svg> </a>
+                    <a href="#" target="_blank" rel="nofollow"> <svg class="ic_x "><use href="/assets/icon/icons-sprite24.svg#ic_x"></use></svg> </a>
+                    <a href="#" target="_blank" rel="nofollow"> <svg class="ic_youtube "><use href="/assets/icon/icons-sprite24.svg#ic_youtube"></use></svg> </a>
+                    <a href="#" target="_blank" rel="nofollow"> <svg class="ic_telegram "><use href="/assets/icon/icons-sprite24.svg#ic_telegram"></use></svg> </a>
+                </section>
+
+                <section class="page-footer__links">
+                    <a href="/sitenews">Новости сайта</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/rules">Правила</a>
+                    <a href="/support" rel="nofollow">Служба поддержки</a>
+                    <a href="/mission">Миссия сайта</a>
+                    <a href="/agreement">Пользовательское соглашение</a>
+                    <a href="/privacy">Политика обработки персональных данных</a>
+                </section>
+
+                <section class="page-footer__copyright">
+                    <span>© 2024 Blu Buk | <a href="mailto:support@ficbook.net">support@blubuk.com</a></span>
+                    <a href="#" class="js-show-corner-cat page-footer__copyright-paw"><svg class="ic_paw "><use href="/assets/icon/icons-sprite24.svg#ic_paw"></use></svg></a>
+                </section>
+            </footer>
+
+            <div class="disclaimer">
+                Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+<section class="sticky-bottom-block">
+    <div class="fb-ads fb-ads-block d-flex small-ad" data-place-id="all-pages-sticky-bottom"></div>
+    <span id="toTop"><svg class="ic_arrow-up "><use href="/assets/icon/icons-sprite24.svg#ic_arrow-up"></use></svg></span>
+    </section>
+
+<div id="cornerCat" class="hidden"></div>
+    </div>
+
+<div class="fb-ads fb-ads-block d-flex desktop-ad-stick-to-left" data-place-id="all-pages-sticky-left"></div>
+
+<script src="assets/js/darktheme.js"></script>
+<script src="assets/js/swiper.js"></script>
+<script src="assets/js/dop.js"></script>
+<script src="assets/js/mymodal/modal.js"></script>
+<script src="assets/js/dropdown.js"></script>
+<script src="assets/js/Text.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="assets/js/Vue.js"></script>
+</body>
+</html>

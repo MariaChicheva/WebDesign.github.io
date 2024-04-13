@@ -377,6 +377,7 @@ html{
 body{
     color:#000;
     background:#4f2d01 url("background.png");
+    background-position: center;
     font-family:verdana,sans-serif;
     font-size:16px;
     line-height:1.7143
@@ -440,6 +441,13 @@ hr{
     cursor:pointer
 }
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+    color:#0A1128;
+    font-family:inherit;
+    font-weight:400;
+    line-height:1.1
+}
+
+.dark-theme h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
     color:#FEFCFB;
     font-family:inherit;
     font-weight:400;
@@ -531,6 +539,9 @@ mark,.mark{
     text-transform:capitalize
 }
 .text-muted{
+    color:#0A1128
+}
+.dark-theme .text-muted{
     color:#FEFCFB
 }
 .text-success{
@@ -1796,6 +1807,16 @@ textarea.form-control{
 }
 .radio label,.checkbox label{
     cursor:pointer;
+    color: #0A1128;
+    min-height:27px;
+    margin-bottom:0;
+    padding-left:20px;
+    font-weight:400
+}
+
+.dark-theme .checkbox label{
+    cursor:pointer;
+    color: #FEFCFB;
     min-height:27px;
     margin-bottom:0;
     padding-left:20px;
@@ -3913,6 +3934,7 @@ button.close{
     margin-bottom:5px
 }
 .mb-10{
+    color: white;
     margin-bottom:10px
 }
 .mb-15{
@@ -5514,9 +5536,7 @@ textarea{
 .dark-theme .visit-link:visited,.dark-theme .fanfic-inline-title.visit-link:visited h3{
     color:#a29881!important
 }
-.dark-theme .text-muted{
-    color:#ffffff4d
-}
+
 .dark-theme .modal .text-muted,.dark-theme .dialog .text-muted{
     color:#525252
 }
@@ -12075,7 +12095,15 @@ footnote:after{
 .fanfiction-wrapper .fanfiction-main .fanfiction-main-header h1{
     letter-spacing:.7px;
     font-size:29px;
-    font-weight:700
+    font-weight:700;
+    color: #4f2d01;
+}
+
+.dark-theme .fanfiction-wrapper .fanfiction-main .fanfiction-main-header h1{
+    letter-spacing:.7px;
+    font-size:29px;
+    font-weight:700;
+    color: #FEFCFB;
 }
 .fanfiction-wrapper .fanfiction-main-top-pagination .pagenav{
     justify-content:flex-end
@@ -18674,3 +18702,5 @@ button.toast-close-button{
         font-size: 16px
     }
 }
+
+
