@@ -402,6 +402,12 @@ a:focus{
 figure{
     margin:0
 }
+
+.h1-find {
+    color: #FEFCFB;
+    margin: 0 0 22px;
+    font-size: 36px;
+}
 .img-responsive{
     max-width:100%;
     height:auto;
@@ -1698,10 +1704,22 @@ fieldset{
     padding:0
 }
 label{
+    color: #FEFCFB;
     max-width:100%;
     margin-bottom:5px;
     font-weight:700;
     display:inline-block
+}
+
+.label-black{
+    color: black;
+    max-width:100%;
+    margin-bottom:5px;
+    font-weight:700;
+    display:inline-block
+}
+.dark-theme label {
+    color: #FEFCFB;
 }
 input[type=search]{
     box-sizing:border-box;
@@ -1807,20 +1825,24 @@ textarea.form-control{
 }
 .radio label,.checkbox label{
     cursor:pointer;
-    color: #0A1128;
+    color: #FEFCFB;
     min-height:27px;
     margin-bottom:0;
     padding-left:20px;
     font-weight:400
 }
 
-.dark-theme .checkbox label{
+.dark-theme .radio label{
     cursor:pointer;
     color: #FEFCFB;
     min-height:27px;
     margin-bottom:0;
     padding-left:20px;
     font-weight:400
+}
+
+.dark-theme .checkbox label {
+    color: #FEFCFB;
 }
 .radio input[type=radio],.checkbox input[type=checkbox]{
     margin-top:4px \9 ;
@@ -3933,6 +3955,10 @@ button.close{
 .mb-5{
     margin-bottom:5px
 }
+.dark-theme .mb-5{
+    margin-bottom:5px;
+    color: #FEFCFB;
+}
 .mb-10{
     color: white;
     margin-bottom:10px
@@ -5828,6 +5854,7 @@ textarea{
     color:#fff
 }
 .small-text{
+    color: #FEFCFB;
     font-size:smaller
 }
 .display-none{
@@ -5883,7 +5910,7 @@ textarea{
     margin-left:15px
 }
 .help{
-    color:#4f2d01;
+    color:#0A1128;
     cursor:help;
     font-weight:400
 }
@@ -9397,7 +9424,6 @@ div.support-message-thumb-message{
 .tags-selector .js-link,.tags-selector .js-span-link,.tags-selector .icon-clickable span,.icon-clickable .tags-selector span,.tags-selector .help{
     text-overflow:ellipsis;
     white-space:nowrap;
-    color:#4f2d01;
     cursor:pointer;
     max-width:calc(100% - 10px);
     margin-bottom:5px;
@@ -12476,7 +12502,7 @@ footnote:after{
     display:flex
 }
 .hat-actions-container>div:last-child,.footer-actions-container>div:last-child{
-    text-align:right;
+    text-align:left;
     flex-grow:1
 }
 .hat-actions-container .btn-with-description,.footer-actions-container .btn-with-description{
@@ -18701,6 +18727,14 @@ button.toast-close-button{
     .fanfic-promo-item.promo-offer .promo-offer-bullhorn-message svg {
         font-size: 16px
     }
+}
+
+.name_fanfic {
+    color: black;
+}
+
+.dark-theme .name_fanfic {
+    color: #FEFCFB;
 }
 
 

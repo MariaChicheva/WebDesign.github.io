@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Blu Buk</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/modal.css">
+    <link rel="stylesheet" href="assets/dropdown.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    
+
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#542a00">
+    <meta name="apple-mobile-web-app-title" content="Blu Buk">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Blu Buk">
+    <meta name="msapplication-TileColor" content="#542a00">
+    <meta name="theme-color" content="#542a00">
+
+
+                            <script src="https://yandex.ru/ads/system/header-bidding.js"></script>
+            <link rel="preconnect" href="https://ads.betweendigital.com" crossorigin>
+            <script>window.yaContextCb = window.yaContextCb || []</script>
+            <script src="https://yandex.ru/ads/system/context.js" async></script>
+            <script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async></script>
+            <script src="https://content.adriver.ru/AdRiverFPS.js"></script>
+</head>
+
+<div class="container">
+    <div class="col-lg-16 main-container">
+        <div class="book-container">
+            <div class="book-stiches-horizontal hidden-xs"></div>
+            <div class="book-stiches-vertical hidden-xs"></div>
+
+            <div class="book-corner-top hidden-xs"></div>
+            <div class="book-corner-bottom hidden-xs"></div>
+
+            <div class="header-t">
+
+                <nav class="add-nav pull-left hidden-xs top-nav">
+                    <a href="/faq" class="faq">FAQ</a>
+                    <a href="/rules" class="faq">Правила</a>
+                    <span class="dark-theme-switcher js-dark-theme-switcher">
+                        <svg width="14px" height="14px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" id="toggle">
+                            <g id="Lager_94" data-name="Lager 94" transform="translate(0)">
+                              <path id="Path_70" data-name="Path 70" d="M12.516,4.509A12,12,0,0,0,22.3,19.881,12.317,12.317,0,0,0,24,20a11.984,11.984,0,0,0,3.49-.514,12.1,12.1,0,0,1-9.963,8.421A12.679,12.679,0,0,1,16,28,12,12,0,0,1,12.516,4.509M16,0a16.5,16.5,0,0,0-2.212.15A16,16,0,0,0,16,32a16.526,16.526,0,0,0,2.01-.123A16.04,16.04,0,0,0,31.85,18.212,16.516,16.516,0,0,0,32,15.944,1.957,1.957,0,0,0,30,14a2.046,2.046,0,0,0-1.23.413A7.942,7.942,0,0,1,24,16a8.35,8.35,0,0,1-1.15-.08,7.995,7.995,0,0,1-5.264-12.7A2.064,2.064,0,0,0,16.056,0Z" fill="#f6f7f7"/>
+                            </g>
+                          </svg>
+                    </span>
+                </nav>
+
+                <strong class="logo visible-xs">
+                    <a href="/">
+                        <img src="assets/logo/mini_logo.png" alt="Logo">
+                    </a>
+                </strong>
+                
+                <div>
+                    <a href="index.html"><img src="assets/logo/logo2m.png" class="logohide" style="margin-bottom: 20px;"></a>
+                </div>
+                <div class="add-nav pull-left hidden-xs top-nav">
+                    <a href="#signin" data-toggle="modal" data-target=".log-sign">Авторизация</a>
+                    <a href="#signup" data-toggle="modal" data-target=".log-sign">Регистрация</a>
+                </div>
+                <div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+                          
+                          <div class="bs-example bs-example-tabs">
+                              <ul id="myTab" class="nav nav-tabs">
+                                <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Авторизация</a></li>
+                                <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Регистрация</a></li>
+                                
+                              </ul>
+                          </div>
+                        <div class="modal-body">
+                          <div id="myTabContent" class="tab-content">
+                         
+                          <div class="tab-pane fade active in" id="signin">
+                              <form class="form-horizontal">
+                              <fieldset>
+                              <!-- Sign In Form -->
+                              <!-- Text input-->
+                                
+                                 <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Email</label></div>
+                                
+                                
+                              <!-- Password input-->
+                              <div class="group">
+                  <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Пароль</label>
+                      </div>
+                  <em>minimum 6 characters</em>
+                  
+                             <div class="forgot-link">
+                              <a href="#forgot" data-toggle="modal" data-target="#forgot-password"> Я забыл пароль</a>
+                              </div>
+                              
+                  
+                              <!-- Button -->
+                              <div class="control-group">
+                                <label class="control-label" for="signin"></label>
+                                <div class="controls">
+                                  <button id="signin" name="signin" class="btn btn-primary btn-block">Войти</button>
+                                </div>
+                              </div>
+                              </fieldset>
+                              </form>
+                          </div>
+                            
+                            
+                          <div class="tab-pane fade" id="signup">
+                              <form class="form-horizontal">
+                              <fieldset>
+                              <!-- Sign Up Form -->
+                              <!-- Text input-->
+                              <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Имя</label></div>
+                              
+                              <!-- Text input-->
+                              <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Фамилия</label></div>
+                              
+                              <!-- Password input-->
+                              <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Email</label></div>
+                              
+                              <!-- Text input-->
+                              <div class="group">
+                  <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Пароль</label></div>
+                                <em>4-8 Символов</em>
+                              
+                              
+                              
+                              
+                              <!-- Button -->
+                              <div class="control-group">
+                                <label class="control-label" for="confirmsignup"></label>
+                                <div class="controls">
+                                  <button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Зарегестрироваться</button>
+                                </div>
+                              </div>
+                              </fieldset>
+                              </form>
+                        </div>
+                      </div>
+                        </div>
+                        <!--<div class="modal-footer">
+                        <center>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </center>
+                        </div>-->
+                      </div>
+                    </div>
+                  </div>
+                    
+                     
+                  
+                  <!--modal2-->
+                  
+                  <div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Password will be sent to your email</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form-horizontal">
+                          <fieldset>
+                          <div class="group">
+                  <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <label class="label" for="date">Email address</label></div>
+                          
+                          
+                          <div class="control-group">
+                                <label class="control-label" for="forpassword"></label>
+                                <div class="controls">
+                                  <button id="forpasswodr" name="forpassword" class="btn btn-primary btn-block">Send</button>
+                                </div>
+                              </div>
+                            </fieldset>
+                              </form>
+                            
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="header-holder">
+                <div class="header-m visible-xs">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="ic_bar"></span>
+                        <span class="ic_bar"></span>
+                        <span class="ic_bar"></span>
+                    </button>
+                </div>
+                <div class="header-b">
+                    <strong class="logo hidden-xs">
+                                                                                    <a href="/">
+
+</a>
+
+                    </strong>
+
+                </div>
+
+                                    
+                
+                <div class="fb-ads fb-ads-block d-flex mx-10 hidden-xs" data-place-id="all-pages-top"></div>
+            </div>
+
+            <nav class="navbar navbar-default">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active home">
+                            <a href="index.html">Домой</span></a>
+                        </li>
+                        <li >
+                            <a href="fanfiction.html">Фанфики</a>
+                        </li>
+                        <li >
+                            <a href="authors.html">Авторы</a></li>
+                        <li >
+                            <a href="/popular-fanfics-376846">Популярное</a>
+                        </li>
+                        <li><a href="/faq" class="visible-xs">FAQ</a></li>
+                        <li><a href="/rules" class="visible-xs">Правила</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="createfan.html" rel="nofollow"><svg class="ic_plus-circle "><use href="/assets/icon/icons-sprite24.svg#ic_plus-circle"></use></svg> Добавить фанфик</a>
+                        </li>
+                        <li >
+                            <a href="find.html" rel="nofollow"><svg class="ic_search "><use href="/assets/icon/icons-sprite24.svg#ic_search"></use></svg> Поиск фанфиков</a>
+                        </li>
+                        <li><a href="/randomfic" rel="nofollow"><svg class="ic_dice "><use href="/assets/icon/icons-sprite24.svg#ic_dice"></use></svg> Случайная работа</a></li>
+                        <li>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main id="main" class="clearfix">
+                        
+                <div itemscope="" itemtype="https://schema.org/Book">
+            <link itemprop="bookFormat" href="https://schema.org/EBook">
+
+<div class="fb-ads fb-ads-block d-flex visible-xs ads-in-fic-hat" data-place-id="fanfic-page-hat-mobile"></div>
+
+<section class="chapter-info">
+    <header class="head mt-15">
+        
+        
+        <div class="fanfic-main-info">
+            <div class="d-flex">
+                <p class="text-muted">ID работы: 12525594</p>
+                <button data-v-48ecb617="" type="button" class="copy-button jsVueComponent"><svg data-v-48ecb617="" class="ic_copy"><use href="/assets/icons/icons-sprite26.svg#ic_copy"></use></svg></button>
+            </div>
+            <h1 class="mb-10" itemprop="name">Mémento mori</h1>
+            
+
+            <div class="mb-10">
+                <svg class="ic_book "><use href="/assets/icons/icons-sprite26.svg#ic_book"></use></svg>
+                                            <a href="/fanfiction/games/identity_v" class="js-open-notification-modal" style="color: white;">Identity V</a>                                                                                                </div>
+
+            <section>
+                                                                    
+<div class="badge-with-icon direction small-direction-mixed
+        " title="Смешанная — несколько равнозначных романтических линий (гет, слэш, фемслэш).">
+<div class="badge-icon-container">
+    <svg class="ic_mixed "><use href="/assets/icons/icons-sprite26.svg#ic_mixed"></use></svg>
+</div>
+
+            <span class="badge-text">Смешанная</span>
+    </div>
+
+
+                                        
+                                        <div class="badge-with-icon badge-rating-NC-17">
+                    <span class="badge-text">NC-17</span>
+                </div>
+
+                                                                    <div class="badge-with-icon badge-secondary badge-status-in-progress">
+                        <div class="badge-icon-container">
+                            <svg class="ic_in-progress" viewBox="0 0 32 32">
+                              <path d="M16.073.08A15.94 15.94 0 0 0 .136 16.016a15.94 15.94 0 0 0 15.937 15.937A15.94 15.94 0 0 0 32.01 16.016 15.94 15.94 0 0 0 16.073.079zm6.733 17.775h-6.745c-1.01 0-1.838-.827-1.838-1.838V9.27c0-1.01.827-1.838 1.838-1.838S17.9 8.26 17.9 9.27v4.906h4.906c1.01 0 1.838.827 1.838 1.838s-.816 1.838-1.838 1.838z"></path>
+                            </svg>
+                        </div>
+                        <span class="badge-text">В процессе</span>
+                    </div>
+                                                                
+                                                                    <div class="badge-with-icon badge-secondary badge-like">
+                        <div class="badge-icon-container">
+                            <svg class="ic_thumbs-up "><use href="/assets/icons/icons-sprite26.svg#ic_thumbs-up"></use></svg>
+                        </div>
+                        <span class="badge-text js-marks-plus">131</span>
+                    </div>
+                                    </section>
+        </div>
+        <section class="fanfic-hat">
+            <section>
+                <div class="sticky-block">
+                    <div class="fanfic-hat-body rounded-block clearfix">
+                                                            <div class="fanfic-hat-premium-notice">
+                                <strong>Горячая работа!</strong>
+                                                                            <a href="/readfic/12525594/comments#content" class="btn btn-link" onclick="fym('reachGoal', 'opened-comments-list-from-fic-hat-premium-notice'); return true;">
+                                        <span class="main-info">
+                                            <svg class="ic_bubble-dark mb-0"><use href="/assets/icons/icons-sprite26.svg#ic_bubble-dark"></use></svg>
+                                            186
+                                        </span>
+                                    </a>
+                                                                    </div>
+                        
+                                                            <div class="jsVueComponent"><div class="fanfic-hat-cover"><div class="zoom-hover"><svg class="ic_zoom"><use href="/assets/icons/icons-sprite26.svg#ic_zoom"></use></svg></div><picture class="fanfic-hat-cover-picture"><source media="(max-width: 650px)" srcset="https://images.ficbook.net/fanfic-covers/m_xilXgKQQYjYuA1F5cxpB07xuNCGVhAhK.jpg"><source media="(max-width: 767px)" srcset="https://images.ficbook.net/fanfic-covers/d_xilXgKQQYjYuA1F5cxpB07xuNCGVhAhK.jpg"><source media="(max-width: 991px)" srcset="https://images.ficbook.net/fanfic-covers/m_xilXgKQQYjYuA1F5cxpB07xuNCGVhAhK.jpg"><img src="https://images.ficbook.net/fanfic-covers/d_xilXgKQQYjYuA1F5cxpB07xuNCGVhAhK.jpg" alt="Mémento mori" width="200"></picture></div><!--v-if--></div>
+                        
+                        <section>
+                            <div class="hat-creator-container">
+<div class=" avatar-decoration-rwings avatar-decoration-holder">
+<div class="img-holder-universal avatar-40">
+<div class="avatar-cropper">
+                    <a href="/authors/167142">                <img alt="" src="https://images.ficbook.net/avatars/7vFfPpN4JQcuh4lqWxU7eqpBBFB8rPVG.png">
+        </a>                    </div>
+</div>
+</div>
+
+<div class="creator-info">
+<a href="/authors/167142" class="creator-username" itemprop="author">Anna Shimotsuki</a>
+<i class="small-text text-muted">автор</i>
+</div>
+</div>
+
+
+<div class="hat-creator-container">
+<div class=" avatar-decoration-holder">
+<div class="img-holder-universal avatar-40">
+<div class="avatar-cropper">
+                    <a href="/authors/896970">                <img alt="" src="https://images.ficbook.net/avatars/j2rVzwou1Ackya1UfAStvXCakGb10Lvj.png">
+        </a>                    </div>
+</div>
+</div>
+
+
+<div class="creator-info">
+                    <a href="/authors/896970" class="creator-username">Rinny Ran</a>
+                <i class="small-text text-muted">бета</i>
+</div>
+</div>
+<div class="hat-creator-container">
+<div class=" avatar-decoration-holder">
+<div class="img-holder-universal avatar-40">
+<div class="avatar-cropper">
+                    <a href="/authors/1399712">                <img alt="" src="https://images.ficbook.net/avatars/RIbzufr3bWAxanysBkD6BdSx3m7nmTSV.png">
+        </a>                    </div>
+</div>
+</div>
+
+
+<div class="creator-info">
+                    <a href="/authors/1399712" class="creator-username">Лорин Смит</a>
+                <i class="small-text text-muted">бета</i>
+</div>
+</div>
+
+
+                        </section>
+
+                        
+                        <div>
+                            <div class="description word-break">
+                                                                        
+                                                                            <div class="mb-5">
+                                        <strong>Пэйринг и персонажи:</strong>
+                                        <div>
+                                                                                                                                                        <a href="/pairings/%D0%9E%D1%80%D1%84%D0%B5%D0%B9---%D0%AD%D0%BC%D0%BC%D0%B0%20%D0%92%D1%83%D0%B4%D1%81" class="js-open-notification-modal                                                       pairing-link pairing-highlight">Орфей/Эмма Вудс</a>,                                                                                                            <a href="/pairings/%D0%9B%D1%83%D0%BA%D0%B0%20%D0%91%D0%B0%D0%BB%D1%8C%D0%B7%D0%B0---%D0%AD%D0%B4%D0%B3%D0%B0%D1%80%20%D0%92%D0%B0%D0%BB%D1%8C%D0%B4%D0%B5%D0%BD" class="js-open-notification-modal                                                       pairing-link pairing-highlight">Лука Бальза/Эдгар Вальден</a>,                                                                                                            <a href="/pairings/%D0%90%D0%B4%D0%B0%20%D0%9C%D0%B5%D1%81%D0%BC%D0%B5%D1%80---%D0%AD%D0%BC%D0%B8%D0%BB%D1%8C" class="js-open-notification-modal                                                       pairing-link pairing-highlight">Ада Месмер/Эмиль</a>,                                                                                                            <a href="/pairings/%D0%A5%D0%B0%D1%81%D1%82%D1%83%D1%80---%D0%98%D0%BB%D0%B0%D0%B9%20%D0%9A%D0%BB%D0%B0%D1%80%D0%BA" class="js-open-notification-modal                                                       pairing-link pairing-highlight">Хастур/Илай Кларк</a>,                                                                                                            <a href="/pairings/%D0%94%D0%B6%D0%B5%D0%BA---%D0%9C%D0%B8%D1%87%D0%B8%D0%BA%D0%BE" class="js-open-notification-modal                                                       pairing-link pairing-highlight">Джек/Мичико</a>,                                                                                                            <a href="/pairings/%D0%9C%D1%8D%D1%80%D0%B8---%D0%94%D0%B6%D0%BE%D0%B7%D0%B5%D1%84%20%D0%94%D0%B5%D0%B7%D0%BE%D0%BB%D1%8C%D0%BD%D1%8C%D0%B5---%D0%AD%D0%B7%D0%BE%D0%BF%20%D0%9A%D0%B0%D1%80%D0%BB---%D0%98%D0%BB%D0%B0%D0%B9%20%D0%9A%D0%BB%D0%B0%D1%80%D0%BA" class="js-open-notification-modal                                                       pairing-link pairing-highlight">Мэри/Джозеф Дезольнье/Эзоп Карл/Илай Кларк</a>,                                                                                                            <a href="/pairings/%D0%AD%D0%BD%D0%B4%D1%80%D1%8E%20%D0%9A%D1%80%D0%B5%D1%81%D1%81---%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80%20%D0%93%D1%80%D0%B0%D0%BD%D1%86" class="js-open-notification-modal                                                       pairing-link pairing-highlight">Эндрю Кресс/Виктор Гранц</a>,                                                                                                            <a href="/pairings/%D0%9D%D0%B0%D0%B8%D0%B1%20%D0%A1%D1%83%D0%B1%D0%B5%D0%B4%D0%B0%D1%80---%D0%9D%D0%BE%D1%80%D1%82%D0%BE%D0%BD%20%D0%9A%D1%8D%D0%BC%D0%BF%D0%B1%D0%B5%D0%BB%D0%BB" class="js-open-notification-modal                                                       pairing-link pairing-highlight">Наиб Субедар/Нортон Кэмпбелл</a>,                                                                                                                                                                <a href="/pairings/%D0%9A%D0%B5%D0%B2%D0%B8%D0%BD%20%D0%90%D0%BB%D0%BE%D0%BD%D1%81%D0%BE" class="js-open-notification-modal pairing-link">Кевин Алонсо</a>,                                                                                                            <a href="/pairings/%D0%A4%D1%80%D0%B5%D0%B4%D0%B4%D0%B8%20%D0%A0%D0%B0%D0%B9%D0%BB%D0%B8" class="js-open-notification-modal pairing-link">Фредди Райли</a>,                                                                                                            <a href="/pairings/%D0%9C%D0%B0%D0%B9%D0%BA%20%D0%9C%D0%BE%D1%80%D1%82%D0%BE%D0%BD" class="js-open-notification-modal pairing-link">Майк Мортон</a>,                                                                                                            <a href="/pairings/%D0%A5%D0%BE%D1%81%D0%B5%20%D0%91%D0%B0%D0%B4%D0%B5%D0%BD" class="js-open-notification-modal pairing-link">Хосе Баден</a>,                                                                                                            <a href="/pairings/%D0%A1%D1%87%D0%B0%D1%81%D1%82%D0%BB%D0%B8%D0%B2%D1%87%D0%B8%D0%BA" class="js-open-notification-modal pairing-link">Счастливчик</a>,                                                                                                            <a href="/pairings/%D0%A4%D0%B8%D0%BE%D0%BD%D0%B0%20%D0%93%D0%B8%D0%BB%D0%BC%D0%B0%D0%BD" class="js-open-notification-modal pairing-link">Фиона Гилман</a>,                                                                                                            <a href="/pairings/%D0%9B%D1%8E%D1%87%D0%B8%D0%BD%D0%BE%20%D0%B4%D0%B5%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8" class="js-open-notification-modal pairing-link">Лючино де Росси</a>,                                                                                                            <a href="/pairings/%D0%A1%D0%B5%20%D0%91%D0%B8%D0%B0%D0%BD%D1%8C" class="js-open-notification-modal pairing-link">Се Биань</a>,                                                                                                            <a href="/pairings/%D0%A4%D0%B0%D0%BD%D1%8C%20%D0%A3%D1%86%D0%B7%D1%8E" class="js-open-notification-modal pairing-link">Фань Уцзю</a>,                                                                                                            <a href="/pairings/%D0%AD%D0%BD%D0%BD" class="js-open-notification-modal pairing-link">Энн</a>,                                                                                                            <a href="/pairings/%D0%98%D0%B4%D1%80%D0%B0" class="js-open-notification-modal pairing-link">Идра</a>,                                                                                                            <a href="/pairings/%D0%93%D0%B0%D0%BB%D0%B0%D1%82%D0%B5%D1%8F%20%D0%9A%D0%BB%D0%BE%D0%B4" class="js-open-notification-modal pairing-link">Галатея Клод</a>,                                                                                                            <a href="/pairings/%D0%90%D0%BB%D1%8C%D0%B2%D0%B0%20%D0%9B%D0%BE%D1%80%D0%B5%D0%BD%D1%86" class="js-open-notification-modal pairing-link">Альва Лоренц</a>,                                                                                                            <a href="/pairings/%D0%94%D0%B5%D0%BC%D0%B8%20%D0%91%D1%83%D1%80%D0%B1%D0%BE%D0%BD" class="js-open-notification-modal pairing-link">Деми Бурбон</a>,                                                                                                            <a href="/pairings/%D0%AD%D0%BC%D0%B8%D0%BB%D0%B8%20%D0%94%D0%B0%D0%B9%D0%B5%D1%80" class="js-open-notification-modal pairing-link">Эмили Дайер</a>,                                                                                                            <a href="/pairings/%D0%9A%D1%80%D0%B8%D1%87%D0%B5%D1%80%20%D0%9F%D0%B8%D1%80%D1%81%D0%BE%D0%BD" class="js-open-notification-modal pairing-link">Кричер Пирсон</a>,                                                                                                            <a href="/pairings/%D0%9B%D0%B5%D0%BE%20%D0%91%D1%8D%D0%BA" class="js-open-notification-modal pairing-link">Лео Бэк</a>,                                                                                                            <a href="/pairings/%D0%9C%D0%B5%D0%BC%D0%BE%D1%80%D0%B8" class="js-open-notification-modal pairing-link">Мемори</a>,                                                                                                            <a href="/pairings/%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%B8%D0%BE" class="js-open-notification-modal pairing-link">Антонио</a>,                                                                                                            <a href="/pairings/%D0%94%D0%B6%D0%BE%D0%BA%D0%B5%D1%80" class="js-open-notification-modal pairing-link">Джокер</a>                                                                                                    </div>
+                                    </div>
+                                
+
+                                <div class="mb-5">
+                                    <strong>Размер:</strong>
+                                    <div>
+                                        планируется Макси, написано                                                332 страницы, 33 части
+                                    </div>
+                                </div>
+
+                                                                            <div class="mb-5">
+                                        <strong class="tag-category">Метки:</strong>
+                                        <div class="tags">
+                                            
+
+<a href="/tags/1683" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">AU</a>
+
+
+<a href="/tags/1682" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Hurt/Comfort</a>
+
+
+<a href="/tags/1665" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Ангст</a>
+
+
+<a href="/tags/104" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Асфиксия</a>
+
+
+<a href="/tags/1491" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Боязнь одиночества</a>
+
+
+<a href="/tags/1343" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Боязнь привязанности</a>
+
+
+<a href="/tags/216" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Выживание</a>
+
+
+<a href="/tags/121" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Грубый секс</a>
+
+
+<a href="/tags/354" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Депрессия</a>
+
+
+<a href="/tags/1672" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Детектив</a>
+
+
+<a href="/tags/1668" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Драма</a>
+
+
+<a href="/tags/1710" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Жестокость</a>
+
+
+<a href="/tags/2257" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Искусство</a>
+
+
+<a href="/tags/257" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Контроль сознания</a>
+
+
+<a href="/tags/800" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Кровь / Травмы</a>
+
+
+<a href="/tags/63" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Любовный многоугольник</a>
+
+
+<a href="/tags/2545" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                         hidden         tag-spoiler        ">На грани жизни и смерти</a>
+
+
+<a href="/tags/1649" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Насилие</a>
+
+
+<a href="/tags/280" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Нежный секс</a>
+
+
+<a href="/tags/71" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Нездоровые отношения</a>
+
+
+<a href="/tags/1815" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Неторопливое повествование</a>
+
+
+<a href="/tags/116" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Обездвиживание</a>
+
+
+<a href="/tags/2146" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Однолюбы</a>
+
+
+<a href="/tags/372" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">От незнакомцев к возлюбленным</a>
+
+
+<a href="/tags/751" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Панические атаки</a>
+
+
+<a href="/tags/378" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Параллельные миры</a>
+
+
+<a href="/tags/290" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Плен</a>
+
+
+<a href="/tags/36" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Потеря памяти</a>
+
+
+<a href="/tags/40" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Психологические травмы</a>
+
+
+<a href="/tags/836" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Психологическое насилие</a>
+
+
+<a href="/tags/210" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Пытки</a>
+
+
+<a href="/tags/1664" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Романтика</a>
+
+
+<a href="/tags/461" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Садизм / Мазохизм</a>
+
+
+<a href="/tags/1713" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                         hidden         tag-spoiler        ">Смерть второстепенных персонажей</a>
+
+
+<a href="/tags/129" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Тентакли</a>
+
+
+<a href="/tags/169" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Триллер</a>
+
+
+<a href="/tags/621" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Убийства</a>
+
+
+<a href="/tags/77" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                         hidden         tag-spoiler         tag-adult">Упоминания самоубийства</a>
+
+
+<a href="/tags/1501" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                        ">Упоминания убийств</a>
+
+
+<a href="/tags/896" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                                         tag-adult">Характерная для канона жестокость</a>
+
+
+<a href="/tags/1266" onclick="fym('reachGoal', 'click-tag'); return true;" class="tag
+js-open-notification-modal                         hidden         tag-spoiler        ">Хороший плохой финал</a>
+
+
+<strong class="show-hidden-tags-btn js-show-hidden-tags tag">
+ Спойлеры        ...
+</strong>
+                                        </div>
+                                    </div>
+                                                                        <div class="mb-5">
+                                    <strong>Описание:</strong>
+                                    <div class="urlized-links js-public-beta-description text-preline" itemprop="description">Поместье Олетус притягивало многих искателей тайн к своим дверям. Одни заходили найти загадки дома, другие - найти ответы на свои вопросы и тайны. Но в итоге все исчезли. Куда они пропали, что стряслось и почему - неизвестно...
+Молодой романист Орфей возвращается в родительский дом спустя много лет, твердо решив разгадать тайны сопровождающие дом. Он еще не знает, что его там ожидает, и какой сюрприз преподнесет ему каждая из этих загадочных дверей...</div>
+                                </div>
+                                                                            <div class="mb-5">
+                                        <strong>Посвящение:</strong>
+                                        <div class="urlized-links js-public-beta-dedication text-preline">Спасибо Rinny Ran, большой поклоннице Ады Месмер за то, что затащила меня в очередную фандомную яму из которой нет выхода (обожаю тебя, зараза &lt;3). 
+
+Тебе посвящается ^^</div>
+                                    </div>
+                                
+                                                                            <div class="mb-5">
+                                        <strong>Примечания:</strong>
+                                        <div class="urlized-links js-public-beta-author-comment text-preline">Хотите поесть стекла? Оно есть у меня!
+
+Влюбилась в историю фэндома, и в особенности в некоторых персонажей. Что Охотники, что Выжившие по-своему болезненно прекрасны. Надеюсь, что доведу эту работу до конца.
+
+Многие из Выживших будут фигурировать в качестве упоминаний. Всех я помещать в шапку не буду (а они так или иначе будут все), но те, кто в истории будут играть важную или околоважную роль обязательно присутствуют. 
+
+Выжившие и Охотники, которые появлялись после выхода Композитора (включая его) фигурировать в данном фанфике НЕ БУДУТ. Иначе адаптация сюжета займет очень много времени.
+
+Каноничные игры поместья беспощадно перепутаны во благо сюжета, поэтому тут метка AU.
+
+18.11.2022
+Работа содержит контент 18+. Внимательно смотрите метки к работе, тут этого добра достаточно. 
+
+Работа условно поделена на несколько арок:
+1-9 главы. Первые рукописи.
+10-21 главы. Охота на Бегуна (Специальный арт от Seli_the_Blesk к данной арке можете посмотреть в моем ТГ-канале)
+22-32 главы. Наши внутренние демоны.
+33-наст. выход. Коридор Кошмаров (Специальный арт от Seli_the_Blesk к данной арке можете посмотреть в моем ТГ-канале)
+
+Ссылка на плейлист Яндекс.Музыки "Memento Mori": <a target="_blank" rel="nofollow" href="/away?url=https%3A%2F%2Fmusic.yandex.ru%2Fusers%2Fsakuratyan2210%40gmail.com%2Fplaylists%2F1005">https://music.yandex.ru/users/sakuratyan2210@gmail.com/playlists/1005</a>
+
+Новости об обновлениях, а также спойлеры к выходящим главам в моем ТГ-канале: <a target="_blank" rel="nofollow" href="/away?url=https%3A%2F%2Ft.me%2Fannshimo">https://t.me/annshimo</a></div>
+                                    </div>
+                                
+                                
+                                                                            <div class="mb-5">
+                                        <strong>Публикация на других ресурсах:</strong>
+                                        <div>
+                                            Уточнять у автора/переводчика
+                                        </div>
+                                    </div>
+                                                                    </div>
+                        </div>
+                                                    </div>
+
+                                                    <section class="fanfic-author-actions" id="fanfic-author-actions">
+                            <div class="fanfic-author-actions__column">
+                                <b>Поделиться:</b>
+                                <div data-v-108ef064="" class="fanfic-author-actions__column jsVueComponent"><div data-v-108ef064="" class="btn btn-xs btn-link d-flex align-items-end gap-5"><svg data-v-108ef064="" class="ic_vk"><use href="/assets/icons/icons-sprite26.svg#ic_vk"></use></svg><span data-v-108ef064="">Вконтакте</span></div><div data-v-108ef064="" class="btn btn-xs btn-link d-flex align-items-end gap-5"><svg data-v-108ef064="" class="ic_x"><use href="/assets/icons/icons-sprite26.svg#ic_x"></use></svg><span data-v-108ef064="">Twitter</span></div><div data-v-108ef064="" class="btn btn-xs btn-link d-flex align-items-end gap-5"><svg data-v-108ef064="" class="ic_link"><use href="/assets/icons/icons-sprite26.svg#ic_link"></use></svg><span data-v-108ef064="">Скопировать ссылку</span></div><div data-v-108ef064=""><input data-v-108ef064="" class="mt-5" type="text" hidden=""></div></div>
+                            </div>
+                        </section>
+                    
+                    <section class="fanfic-author-actions" id="fanfic-author-actions"></section>
+
+                    <div class="hat-actions-container hidden-xs">
+<div class="mb-15 text-center">
+                                                                        <span class="btn btn-with-description js-open-notification-modal js-like btn-primary" data-fanfic-id="12525594" onclick="fym('reachGoal', 'liked-fic-from-fic-header'); return true;">
+                    <span class="main-info"><svg class="ic_thumbs-up "><use href="/assets/icons/icons-sprite26.svg#ic_thumbs-up"></use></svg> <span class="js-marks-plus">131</span></span>
+                    <span class="description">Нравится</span>
+                </span>
+                                        
+    <button type="button" class="btn btn-with-description btn-primary jsVueComponent"><span class="main-info"><svg class="ic_star-empty"><use href="/assets/icons/icons-sprite26.svg#ic_star-empty"></use></svg> 124</span><span class="description">Подписаться</span></button>
+
+            <a href="/readfic/12525594/comments#content" class="btn btn-primary btn-with-description" onclick="fym('reachGoal', 'opened-comments-list-from-fic-header'); return true;">
+        <span class="main-info">
+            <svg class="ic_bubble-dark "><use href="/assets/icons/icons-sprite26.svg#ic_bubble-dark"></use></svg>
+            186
+        </span>
+        <span class="description">Отзывы</span>
+    </a>
+
+                            <div data-v-57c66600="" class="button-container jsVueComponent"><span data-v-57c66600="" class="btn btn-primary btn-with-description"><span data-v-57c66600="" class="main-info"><svg data-v-57c66600="" class="ic_bookmark"><use href="/assets/icons/icons-sprite26.svg#ic_bookmark"></use></svg> 28</span><span data-v-57c66600="" class="description">В сборник</span></span><!--v-if--></div>
+                                <a href="/readfic/12525594/download" rel="nofollow" class="btn btn-primary btn-with-description" onclick="fym('reachGoal', 'opened-fic-download-page-from-fic-header'); return true;">
+        <span class="main-info"><svg class="ic_download "><use href="/assets/icons/icons-sprite26.svg#ic_download"></use></svg></span>
+        <span class="description">Скачать</span>
+    </a>
+    </div>
+
+</div>
+
+                </div>
+            </section>
+            <section>
+                <div class="sticky-block">
+                    <div class="fanfic-reward-container rounded-block">
+                        <a name="rewards"></a>
+                        <strong>Награды от читателей:</strong>
+                        <div>
+                            <section class="mb-15 jsVueComponent"><div><div class="fanfic_reward_list"><svg class="ic_trophy icon-gold-color"><use href="/assets/icons/icons-sprite26.svg#ic_trophy"></use></svg> «(๑ↀᆺↀ๑)» от <a href="/authors/3917247">Kyun-Soon</a></div><!--v-if--></div></section>
+
+                                                                                                                <section data-v-ec2003aa="" class="wrapper-section jsVueComponent btn-block justify-content-center"><button data-v-19bb75d1="" data-v-ec2003aa="" type="button" class="btn icon-button btn-default reward-button jsVueComponent btn-block justify-content-center reward-button jsVueComponent btn-block justify-content-center"><svg data-v-19bb75d1="" class="ic_trophy icon"><use href="/assets/icons/icons-sprite26.svg#ic_trophy"></use></svg><div data-v-19bb75d1="" class="text"><div data-v-19bb75d1="" class="title">Наградить фанфик <!--v-if--></div><div data-v-19bb75d1="" class="subtitle"></div></div></button><!--v-if--></section>
+                                                                                                    </div>
+                    </div>
+
+                    <div class="fb-ads fb-ads-block d-flex ads-in-fic-hat-desktop" data-place-id="fanfic-page-hat-desktop"></div>
+                </div>
+            </section>
+
+            <div class="hat-actions-container visible-xs">
+<div class="mb-15 text-center">
+                                                                        <span class="btn btn-with-description js-open-notification-modal js-like btn-primary" data-fanfic-id="12525594" onclick="fym('reachGoal', 'liked-fic-from-fic-header'); return true;">
+                    <span class="main-info"><svg class="ic_thumbs-up "><use href="/assets/icons/icons-sprite26.svg#ic_thumbs-up"></use></svg> <span class="js-marks-plus">131</span></span>
+                    <span class="description">Нравится</span>
+                </span>
+                                        
+    <button type="button" class="btn btn-with-description btn-primary jsVueComponent"><span class="main-info"><svg class="ic_star-empty"><use href="/assets/icons/icons-sprite26.svg#ic_star-empty"></use></svg> 124</span><span class="description">Подписаться</span></button>
+
+            <a href="/readfic/12525594/comments#content" class="btn btn-primary btn-with-description" onclick="fym('reachGoal', 'opened-comments-list-from-fic-header'); return true;">
+        <span class="main-info">
+            <svg class="ic_bubble-dark "><use href="/assets/icons/icons-sprite26.svg#ic_bubble-dark"></use></svg>
+            186
+        </span>
+        <span class="description">Отзывы</span>
+    </a>
+
+                            <div data-v-57c66600="" class="button-container jsVueComponent"><span data-v-57c66600="" class="btn btn-primary btn-with-description"><span data-v-57c66600="" class="main-info"><svg data-v-57c66600="" class="ic_bookmark"><use href="/assets/icons/icons-sprite26.svg#ic_bookmark"></use></svg> 28</span><span data-v-57c66600="" class="description">В сборник</span></span><!--v-if--></div>
+                                <a href="/readfic/12525594/download" rel="nofollow" class="btn btn-primary btn-with-description" onclick="fym('reachGoal', 'opened-fic-download-page-from-fic-header'); return true;">
+        <span class="main-info"><svg class="ic_download "><use href="/assets/icons/icons-sprite26.svg#ic_download"></use></svg></span>
+        <span class="description">Скачать</span>
+    </a>
+    </div>
+
+<div class="mb-15">
+            <a href="/collections/12525594/list" rel="nofollow" class="jsVueComponent">Смотреть работу в <span class="badge badge-premium">28</span> сборниках</a>
+    </div>
+</div>
+
+        </section>
+    </header>
+
+    <div>
+        <a name="content"></a>
+
+            <script type="text/html" id="complainFanficModalTemplate">
+<div id="complainFanficModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="complainFanficModalLabel">
+<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="complainFanficModalLabel"><a target="_blank"
+                                                                     href="/rules">Сообщить о нарушении правил</a>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <form>
+                
+                <div class="radio">
+                    <label>
+                        <input type="radio"
+                               name="reason"
+                               value="7">
+                        Набросок из нескольких строк, еще не ставший полноценным произведением
+                        <br>
+                        <span class="text-muted small-text">
+                            Например, «тут будет первая часть» или «я пока не написала, я с телефона».
+                        </span>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio"
+                               name="reason"
+                               value="6">
+                        Мнения о событиях или описания своей жизни, похожие на записи в личном дневнике
+                        <br>
+                        <span class="text-muted small-text">
+                            Не путать с «Мэри Сью» — они мало кому нравятся, но не нарушают правил.
+                        </span>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio"
+                               name="reason"
+                               value="4">
+                        Конкурс, мероприятие, флешмоб, объявление, обращение к читателям
+                        <br>
+                        <span class="text-muted small-text">
+                            Все это автору следовало бы оставить для других мест.
+                        </span>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="reason" value="5">
+                        Подборка цитат, изречений, анекдотов, постов, логов, переводы песен
+                        <br>
+                        <span class="text-muted small-text">
+                            Текст состоит из скопированных кусков и не является фанфиком или статьей.
+                            <br>
+                            <b>Если текст содержит исследование, основанное на цитатах, то он не нарушает правил.</b>
+                        </span>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio"
+                               name="reason"
+                               value="3">
+                        Текст не на русском языке
+                        <br>
+                        <span class="text-muted small-text">
+                            Вставки на иностранном языке допустимы.
+                        </span>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="reason" value="1">
+                        Намеренная провокация или оскорбление
+                        <br>
+                        <span class="text-muted small-text">
+                            Автор создал текст с целью потроллить читателей. Не путать со стёбом или пародией.
+                        </span>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="reason" value="2">
+                        Плагиат
+                        <br>
+                        <span class="text-muted small-text">
+                            Пользователь, опубликовавший работу, не является настоящим ее автором или переводчиком.
+                        </span>
+                    </label>
+
+                    <div style="display: none;" class="well well-sm" id="complain_fanfic_proof">
+                        <b class="text-danger">
+                            Плагиатом считается копирование текста и выдача его за свой. Если у вас украли идею или персонажей - не стоит слать жалобу, мы не сможем вам помочь. В этом случае обращайтесь к автору напрямую.
+                        </b>
+                        <br/>
+                        Пожалуйста, приведите ссылку, которая могла бы подтвердить настоящее авторство, и пояснения, почему вы считаете данную работу плагиатом:
+                        <br/>
+                        <textarea class="form-control js-complain-fanfic-proof-2" rows="3" maxlength="10000"></textarea>
+                    </div>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="reason" value="13">
+                        Список признаков или причин, плюсы и минусы, анкета персонажей
+                        <br>
+                        <span class="text-muted small-text">
+                            Перечисление чего-либо не является полноценным фанфиком, ориджиналом или статьей.
+                        </span>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="reason" value="15">
+                        Часть работы со ссылкой на продолжение на другом сайте
+                        <br>
+                        <span class="text-muted small-text">
+                            Пример: Вот первая глава, остальное читайте по ссылке...
+                        </span>
+                    </label>
+
+                    <div style="display: none;" class="well well-sm" id="complain_fic_link_proof">
+                        Пожалуйста, приведите часть текста и ссылку, чтобы мы могли провести соответствующую проверку:
+                        <br/>
+                        <textarea class="form-control js-complain-fanfic-proof-15" rows="3" maxlength="10000"></textarea>
+                    </div>
+                </div>
+                                            <div class="radio">
+                        <label>
+                            <input type="radio"
+                                   name="reason"
+                                   value="16">
+                            Нарушение правил публикации обложки фанфика
+                            <br>
+                            <span class="text-muted small-text">
+                            Пример: Обложка содержит текст с нецензурной лексикой, изображено насилие, оскорбления в любой форме и т. д.
+                        </span>
+                        </label>
+                    </div>
+                
+                <div class="radio">
+                    <label>
+                        <input type="radio"
+                               name="reason"
+                               value="18">
+                        Тексты с участием персонажей, не достигших возраста согласия.
+                        <br>
+                        <span class="text-muted small-text">
+                           В сексуального характера сценах не могут быть задействованы персонажи, не достигшие возраста согласия.
+                        </span>
+                    </label>
+
+                    <div style="display: none;" class="well well-sm" id="complain_age_of_consent_proof">
+                        Пожалуйста, приведите пример из текста доказывающий нарушение:
+                        <br/>
+                        <textarea class="form-control js-complain-fanfic-proof-18" rows="3" maxlength="10000"></textarea>
+                    </div>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="reason" value="19">
+                        Работа затрагивает недавние мировые трагедии или политические конфликты
+                        <br>
+                        <span class="text-muted small-text">
+                            Неважно, с какой именно целью написана работа - не стоит использовать недавние события-трагедии для создания своих работ.
+                        </span>
+                    </label>
+
+                    <div style="display: none;" class="well well-sm" id="complain_tragedy_proof">
+                        Пожалуйста, приведите пояснения и часть текста, где затрагиваются те или иные события:
+                        <br/>
+                        <textarea class="form-control js-complain-fanfic-proof-19" rows="3" maxlength="10000"></textarea>
+                    </div>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="reason" value="20">
+                        Переводы без разрешения, машинные переводы
+                        <br>
+                        <span class="text-muted small-text">
+                        На сайте допускается публиковать только переводы с иностранного языка, которые были выполнены самостоятельно, с разрешения автора оригинала.
+                    </span>
+                    </label>
+
+                    <div style="display: none;" class="well well-sm" id="complain_translations_proof">
+                        Пожалуйста, приведите пояснения, почему вы считаете, что данный перевод является машинным и/или публикуется без разрешения автора оригинала:
+                        <br/>
+                        <textarea class="form-control js-complain-fanfic-proof-20" rows="3" maxlength="10000"></textarea>
+                    </div>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="reason" value="21">
+                        Работа дубликат
+                        <br/>
+                        <span class="text-muted small-text">
+                            Публикация одного и того же текста (например: два соавтора выложили одну и ту же работу, каждый со своего профиля; автор выложил один и тот же текст в своем профиле два раза).
+                        </span>
+                    </label>
+
+                    <div style="display: none;" class="well well-sm" id="complain_duplicate_proof">
+                        Пожалуйста, приведите часть текста и ссылку, чтобы мы могли провести соответствующую проверку:
+                        <br/>
+                        <textarea class="form-control js-complain-fanfic-proof-21" rows="3" maxlength="10000"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            <button type="button"
+                    class="btn btn-primary jsFanficComplain">Отправить сообщение администрации</button>
+        </div>
+    </div>
+</div>
+</div>
+</script>
+
+
+<a name="part_content"></a>
+
+
+<article class="article mb-15">
+
+    <a href="/readfic/12525594/32291779#part_content" class="visible-xs-block start-reading" onclick="fym('reachGoal','start-read-fic-from-table-of-content'); return true;">
+        Начать читать
+        <svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg>
+    </a>
+
+    <div class="title-area text-center">
+        <h2>Содержание</h2>
+    </div>
+
+    <div class="fb-ads fb-ads-block d-flex " data-place-id="fanfic-table-of-content-middle"></div>
+
+    <ul class="list-unstyled list-of-fanfic-parts clearfix">
+                                                    <li class="part">
+                    <a href="/readfic/12525594/32291779#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">1. Du passé au présent</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="23 сентября 2022 г. в 21:50">23 сентября 2022 г. в 21:50</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/32291779?tab=1#tabContent">Отзывы: 4</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/32472272#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">2. Couloir vers l'oubli</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="13 октября 2022 г. в 12:29">13 октября 2022 г. в 12:29</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/32472272?tab=1#tabContent">Отзывы: 6</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/32791782#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">3. Première boucle</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="2 ноября 2022 г. в 19:05">2 ноября 2022 г. в 19:05</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/32791782?tab=1#tabContent">Отзывы: 4</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/32889197#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">4. Que le jeu commence!</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="9 ноября 2022 г. в 20:54">9 ноября 2022 г. в 20:54</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/32889197?tab=1#tabContent">Отзывы: 7</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/32955017#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">5. Vieille mémoire</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="15 ноября 2022 г. в 21:36">15 ноября 2022 г. в 21:36</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/32955017?tab=1#tabContent">Отзывы: 2</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/32973386#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">6. Erreur de composition</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="17 ноября 2022 г. в 15:03">17 ноября 2022 г. в 15:03</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/32973386?tab=1#tabContent">Отзывы: 2</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/32955028#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">7. Sombres présages</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="23 ноября 2022 г. в 15:08">23 ноября 2022 г. в 15:08</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/32955028?tab=1#tabContent">Отзывы: 7</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/32955040#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">8. Fausse réalité</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="29 ноября 2022 г. в 19:23">29 ноября 2022 г. в 19:23</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/32955040?tab=1#tabContent">Отзывы: 1</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/32955050#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">9. Tout pour toi...</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="3 декабря 2022 г. в 20:32">3 декабря 2022 г. в 20:32</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/32955050?tab=1#tabContent">Отзывы: 7</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33199547#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">10. Un accord pour la liberté</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="14 декабря 2022 г. в 15:51">14 декабря 2022 г. в 15:51</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33199547?tab=1#tabContent">Отзывы: 2</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33264480#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">11. Tout le monde a des squelettes dans le placard...</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="22 декабря 2022 г. в 01:51">22 декабря 2022 г. в 01:51</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33264480?tab=1#tabContent">Отзывы: 3</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33336462#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">12. Deuxième jeu</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="1 января 2023 г. в 19:55">1 января 2023 г. в 19:55</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33336462?tab=1#tabContent">Отзывы: 5</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33422610#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">13. Le vrai visage triste</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="18 января 2023 г. в 16:25">18 января 2023 г. в 16:25</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33422610?tab=1#tabContent">Отзывы: 4</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33595582#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">14. Bon moment de rencontre</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="26 января 2023 г. в 01:21">26 января 2023 г. в 01:21</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33595582?tab=1#tabContent">Отзывы: 4</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33637470#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">15. Soirée d'accomplissement des désirs</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="4 февраля 2023 г. в 19:37">4 февраля 2023 г. в 19:37</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33637470?tab=1#tabContent">Отзывы: 3</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33760953#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">16. Larmes de vérité amère</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="15 февраля 2023 г. в 08:55">15 февраля 2023 г. в 08:55</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33760953?tab=1#tabContent">Отзывы: 5</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33836844#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">17. Le postier perdu</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="20 февраля 2023 г. в 05:56">20 февраля 2023 г. в 05:56</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33836844?tab=1#tabContent">Отзывы: 2</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33875525#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">18. Monde photo déformé</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="23 февраля 2023 г. в 18:17">23 февраля 2023 г. в 18:17</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33875525?tab=1#tabContent">Отзывы: 14</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33913604#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">19. Dans les bras d'un démon</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="27 февраля 2023 г. в 20:02">27 февраля 2023 г. в 20:02</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33913604?tab=1#tabContent">Отзывы: 10</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/33954585#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">20. Jeux d'esprit</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="5 марта 2023 г. в 17:54">5 марта 2023 г. в 17:54</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/33954585?tab=1#tabContent">Отзывы: 10</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/34012477#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">21. En savoir plus sur les émotions...</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="12 марта 2023 г. в 00:49">12 марта 2023 г. в 00:49</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/34012477?tab=1#tabContent">Отзывы: 10</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/34052766#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">22. Cendres de nos souvenirs</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="16 марта 2023 г. в 20:33">16 марта 2023 г. в 20:33</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/34052766?tab=1#tabContent">Отзывы: 6</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/34116158#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">23. Lot incontesté</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="5 апреля 2023 г. в 01:02">5 апреля 2023 г. в 01:02</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/34116158?tab=1#tabContent">Отзывы: 7</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/34276615#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">24. Le silence ne sert à rien</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="12 апреля 2023 г. в 02:03">12 апреля 2023 г. в 02:03</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/34276615?tab=1#tabContent">Отзывы: 11</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/34344844#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">25. Monstre à deux faces</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="28 апреля 2023 г. в 15:01">28 апреля 2023 г. в 15:01</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/34344844?tab=1#tabContent">Отзывы: 2</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/34496681#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">26. Les morts ambulants</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="17 мая 2023 г. в 21:22">17 мая 2023 г. в 21:22</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/34496681?tab=1#tabContent">Отзывы: 6</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/34603128#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">27. Nos expériences intérieures</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="26 мая 2023 г. в 20:13">26 мая 2023 г. в 20:13</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/34603128?tab=1#tabContent">Отзывы: 6</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/34659179#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">28. Pour le bien commun</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="24 июня 2023 г. в 20:51">24 июня 2023 г. в 20:51</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/34659179?tab=1#tabContent">Отзывы: 5</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/35026275#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">29. Un sacrifice inutile</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="23 июля 2023 г. в 23:17">23 июля 2023 г. в 23:17</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/35026275?tab=1#tabContent">Отзывы: 6</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/35193966#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">30. Portrait sanglant</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="17 сентября 2023 г. в 02:28">17 сентября 2023 г. в 02:28</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/35193966?tab=1#tabContent">Отзывы: 4</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/35638729#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">31. Nos cœurs battent à l'unisson</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="27 ноября 2023 г. в 04:53">27 ноября 2023 г. в 04:53</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/35638729?tab=1#tabContent">Отзывы: 11</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/36123621#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">32. Événements avant la tempête</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="25 декабря 2023 г. в 03:52">25 декабря 2023 г. в 03:52</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/36123621?tab=1#tabContent">Отзывы: 4</a>
+                                                        </div>
+                </li>
+                                                                        <li class="part">
+                    <a href="/readfic/12525594/36221754#part_content" class="part-link visit-link ">
+                        <div class="part-title word-break">
+                            <h3 class="name_fanfic">33. Couloir sombre</h3>
+                                                            </div>
+                        <div class="next-part-arrow big-text visit-link"><svg class="ic_arrow-next "><use href="/assets/icons/icons-sprite26.svg#ic_arrow-next"></use></svg></div>
+                    </a>
+                    <div class="part-info text-muted">
+                                                                    <span title="18 февраля 2024 г. в 03:23">18 февраля 2024 г. в 03:23</span>
+                                                                                                        |
+                                <a href="/readfic/12525594/36221754?tab=1#tabContent">Отзывы: 6</a>
+                                                        </div>
+                </li>
+                            
+        
+                    </ul>
+    </article>
+
+        </div>
+</section>
+</div>
+
+                                    <div class="fb-ads fb-ads-block d-flex mx-10" data-place-id="all-pages-bottom"></div>
+                            </main>
+                            <footer class="page-footer" id="footer">
+                                <section class="page-footer__pwa">
+                                    <div class="page-footer__pwa-cat"></div>
+                
+                                    <div class="page-footer__pwa-app-name">Blu Buk</div>
+                
+                                </section>
+                
+                                <section class="page-footer__media">
+                                    <a href="#" target="_blank" rel="nofollow"> <svg class="ic_vk "><use href="/assets/icon/icons-sprite24.svg#ic_vk"></use></svg> </a>
+                                    <a href="#" target="_blank" rel="nofollow"> <svg class="ic_x "><use href="/assets/icon/icons-sprite24.svg#ic_x"></use></svg> </a>
+                                    <a href="#" target="_blank" rel="nofollow"> <svg class="ic_youtube "><use href="/assets/icon/icons-sprite24.svg#ic_youtube"></use></svg> </a>
+                                    <a href="#" target="_blank" rel="nofollow"> <svg class="ic_telegram "><use href="/assets/icon/icons-sprite24.svg#ic_telegram"></use></svg> </a>
+                                </section>
+                
+                                <section class="page-footer__links">
+                                    <a href="/sitenews">Новости сайта</a>
+                                    <a href="/faq">FAQ</a>
+                                    <a href="/rules">Правила</a>
+                                    <a href="/support" rel="nofollow">Служба поддержки</a>
+                                    <a href="/mission">Миссия сайта</a>
+                                    <a href="/agreement">Пользовательское соглашение</a>
+                                    <a href="/privacy">Политика обработки персональных данных</a>
+                                </section>
+                
+                                <section class="page-footer__copyright">
+                                    <span>© 2024 Blu Buk | <a href="mailto:support@ficbook.net">support@blubuk.com</a></span>
+                                    <a href="#" class="js-show-corner-cat page-footer__copyright-paw"><svg class="ic_paw "><use href="/assets/icon/icons-sprite24.svg#ic_paw"></use></svg></a>
+                                </section>
+                            </footer>
+                
+                            <div class="disclaimer">
+                                Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="sticky-bottom-block">
+                    <div class="fb-ads fb-ads-block d-flex small-ad" data-place-id="all-pages-sticky-bottom"></div>
+                    <span id="toTop"><svg class="ic_arrow-up "><use href="/assets/icon/icons-sprite24.svg#ic_arrow-up"></use></svg></span>
+                    </section>
+                
+                <div id="cornerCat" class="hidden"></div>
+                    </div>
+                
+                <div class="fb-ads fb-ads-block d-flex desktop-ad-stick-to-left" data-place-id="all-pages-sticky-left"></div>
+                
+                <script src="assets/js/darktheme.js"></script>
+                <script src="assets/js/swiper.js"></script>
+                <script src="assets/js/dop.js"></script>
+                <script src="assets/js/mymodal/modal.js"></script>
+                <script src="assets/js/dropdown.js"></script>
+                <script src="assets/js/Text.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+                <script src="assets/js/Vue.js"></script>
+                
+                </body>
+                </html>
